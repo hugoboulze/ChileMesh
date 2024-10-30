@@ -1,6 +1,8 @@
 # Module 2: Slab 2D to 3D
 
-Creation of the subduction interface. First the 2D slice of the interface is drawn. Then, it is extended along the path of the subduction trench.
+Creation of a subduction interface. First the 2D slice of the interface is drawn. Then, it is extended along the path of the subduction trench.
+
+This mesh of the subducting plate has a constant dip angle. It will be projected on the real Chilean slab in **Module 3**.
 
 Run the following script in the current directory:
 
@@ -20,7 +22,7 @@ Run the following script in the current directory:
 
 - ̀`refine_meshgems.inp`: Convert the 3D spherical mesh in a 3D flat frame. Remesh the mesh geometries using meshgems.
 
-- `subduction_2D_chili.mast`: 2D geometry of the subduction zone. Open using Zmaster.
+- `subduction_2D_chile.mast`: 2D geometry of the subduction zone. Open using Zmaster.
 
 - `check_thickness.py`: Compute the thickness of the slab (SLAB) and of the subduction channel (CH)
 
