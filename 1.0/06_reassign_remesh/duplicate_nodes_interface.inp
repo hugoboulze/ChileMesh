@@ -3,7 +3,7 @@
 %
 
 ****mesher
- ***mesh ./mesh_duplicated_tmp1.geo
+ ***mesh ./mesh_duplicated_tmp.geo
   **open ./mesh_before_duplication.geo
 
   **nset bord_plan
@@ -23,8 +23,8 @@
 
   **cleanup_bsets
 
- ***mesh ./mesh-Chile_v1.0.geo
-  **open ./mesh_duplicated_tmp1.geo
+ ***mesh ./chile-mesh_v1.0.geo
+  **open ./mesh_duplicated_tmp.geo
 
   **rename_set
    *bsets
