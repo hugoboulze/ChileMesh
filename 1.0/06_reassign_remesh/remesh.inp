@@ -4,7 +4,7 @@
 
 ****mesher
  ***mesh mesh-remeshed.geof
-  **open mesh-before-remeshing.geo
+  **open mesh_before_remeshing.geo
   **adaptation
    *min_size .0005
    *max_size .05
@@ -12,10 +12,10 @@
    *metric from_file file metric.dat
    *volume_mesher mmg3d
     hgrad 1.25
-    hausd 0.01  
-    
+    hausd 0.01
+
    *preserve_elsets
-    
+
     ASTHENOSPHERE-70-200-OCEANIC
     ASTHENOSPHERE-70-200-CONTINENTAL
     ASTHENOSPHERE-200-270-OCEANIC
@@ -32,9 +32,8 @@
     LOWER-MANTLE
     SLAB
     LAYER-54-70-OCEANIC
-    
+
    *preserve_bsets
     fault_plane
-    
-****return 
 
+****return

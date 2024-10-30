@@ -1,27 +1,24 @@
 #!/bin/bash -e
-echo -e '\n'
-echo '##########################'
-echo 'Module 6 - Reassign Remesh'
-echo '##########################'
-if [ ! -d "out" ]; then
-    mkdir out
-    echo -e "out dir created"
-else
-    rm out/*
-    echo -e "out dir already exist - out dir cleaned"
-fi
 
-cp ./* ./out
-cd ./out
+cat <<EOF
 
-Zclean -a
-echo -e '\n ***START*** \n'
+##############################
+Module 6 - Reassign Remesh
+##############################
+***START***
+
+EOF
+
+rm -rf out
+rsync -a . out/ --exclude=out --exclude=$(basename $0)
+cd out/
 
 Zrun -m cut_lithospheres.inp
 python3 disconnect_lithospheres.py
 Zrun -m cut_asthenospheres.inp
 python3 disconnect_asthenospheres.py
 Zrun -m reassign_elset.inp
+# par ici il manquerait : python3 create_mmg_metric.py?
 Zrun -m remesh.inp
 Zrun -m create_boundaries_and_remove_ocean.inp
 Zrun duplicate_nodes_interface.inp
@@ -34,5 +31,3 @@ else
     echo "Error: $f is missing or empty!"
     false
 fi
-
-cd ..

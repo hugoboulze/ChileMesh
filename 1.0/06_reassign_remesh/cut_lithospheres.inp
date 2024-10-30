@@ -5,7 +5,7 @@
 ****mesher
 
  ***mesh ./mesh_lithospheres_to_disconnect.geo
-  **open ../06_make_horizontal_and_vertical_cuts/mesh_knifed_NordSud_04_54_70_200_270_670.geo
+  **open ../../05_plane_cuts/out/mesh_knifed_NordSud_04_54_70_200_270_670.geo
 
   **remove_set
    *elsets ASSO_PB AUTO
