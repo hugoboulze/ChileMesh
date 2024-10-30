@@ -1,7 +1,7 @@
 #!/bin/bash -e
 cat <<EOF
 The following are necessary, let's try to detect them:
-- gmt
+- gmt (6.3.0+)
 - python (including numpy, matplotlib)
 - Zset, including:
   - python interface
@@ -10,6 +10,13 @@ EOF
 
 echo "** gmt **"
 type gmt && { gmt=ok ; } || { gmt=ko ; }
+# if dpkg available, use it to check that the version is good enough:
+if type dpkg 2>/dev/null; then
+    if dpkg --compare-versions $(gmt --version) lt 6.3.0; then
+	gmt="ko (version $(gmt --version) < 6.3.0)"
+    fi
+fi
+
 
 echo "** python **"
 type python3
