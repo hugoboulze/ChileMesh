@@ -5,6 +5,7 @@
 ****mesher
 
  ***mesh 
+  **dont_save_final_mesh
   **open chile-mesh_v1.0.geo
 
 %% TODO: check why msh and mesh export don't work
