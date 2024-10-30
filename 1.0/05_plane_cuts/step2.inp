@@ -4,10 +4,9 @@
  %   Mesher.MeshFusion 1.e-3
 
  ***mesh mesh-before-knife1.geo
-%  **open ../05_make_insertion_box/mesh-before-knife.geo
-  **open ../05_manual_insertion_box/mesh-before-knife.geo
+  **open ../../04_insertion_box/out/mesh-before-knife.geo
 
-%  **scale 1. 1. 2.5  %  scale was already done during ../05*/scale2.5.inp
+%  **scale 1. 1. 2.5  %  scale was already done in previous step
 
   **elset COMP
    *use_elset CL MACRO

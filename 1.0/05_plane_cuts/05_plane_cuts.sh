@@ -40,5 +40,3 @@ else
     echo "Error: $f is missing or empty!"
     false
 fi
-
-cd ..

@@ -10,10 +10,10 @@ Create the 2 edges for north and south planes
 """
 
 # =============================================================================
-import sys
+#import sys
 import numpy as np
 import zset
-sys.path.append('./../../../')
+# sys.path.append('./../../../')
 from constants import z400km
 # =============================================================================
 

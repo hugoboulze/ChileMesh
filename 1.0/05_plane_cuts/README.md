@@ -4,7 +4,7 @@ Cut the mesh with:
   - horizontal planes: -4km, -54km, -70km, -200km, -270km, -670k
   - north and south vertical planes
 
-Planes are insertes using Z-cracks module.
+Planes are inserted using Z-cracks module.
 
 Run the following script in the current directory:
 
