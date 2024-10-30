@@ -9,11 +9,11 @@ The following are necessary, let's try to detect them:
 EOF
 
 echo "** gmt **"
-type gmt && { gmt=ok ; } || { gmt=ko ; }
+type gmt && { gmt="ok" ; } || { gmt="ko (not found)"; }
 # if dpkg available, use it to check that the version is good enough:
 if type dpkg 2>/dev/null; then
     if dpkg --compare-versions $(gmt --version) lt 6.3.0; then
-	gmt="ko (version $(gmt --version) < 6.3.0)"
+	gmt="$gmt (version $(gmt --version) < 6.3.0)"
     fi
 fi
 
