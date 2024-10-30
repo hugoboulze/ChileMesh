@@ -1,3 +1,12 @@
+# python
+__pycache__
+
+# output directory
+out
+
+.geo*
+
+
 # zebulon files
 *.integ
 *.node
@@ -26,10 +35,3 @@ crack.*
 distene_mesh.dat
 surface_mesh_input.sol
 
-# python
-__pycache__
-
-.geo*
-
-
-./out

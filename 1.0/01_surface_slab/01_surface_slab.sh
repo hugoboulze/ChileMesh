@@ -1,20 +1,15 @@
 #!/bin/bash -e
 
-echo -e '\n'
-echo '##########################'
-echo 'Module 1 - Surface slab'
-echo '##########################'
+cat <<EOF
+##########################
+Module 1 - Surface slab
+##########################
+EOF
 
-if [ ! -d "out" ]; then
-    mkdir out
-    echo -e "out dir created"
-else
-    rm -f out/*
-    echo -e "out dir already exist - out dir cleaned"
-fi
-
-cp ./* ./out
-cd ./out
+# Recreate a fresh and clean out directory:
+rm -rf out
+rsync -a . out/ --exclude=out
+cd out/
 
 echo -e '\n ***START*** \n'
 python3 create_surface_slab.py
@@ -22,13 +17,8 @@ echo -e '\n ***END***'
 
 f=slabSurf_0.1deg_SPHE.csv
 if [ -s $f ]; then
-    
-    echo $f succesfully created
+    echo "out/$f succesfully created"
     echo -e '\n ***END***'
- 
 else
-    echo "Error: $f is missing or empty!"
-    false
+    echo "Error: out/$f is missing or empty!"
 fi
-
-cd ..
