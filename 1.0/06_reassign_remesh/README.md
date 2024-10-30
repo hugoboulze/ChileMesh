@@ -5,7 +5,7 @@ Create the final geometries (e.g. asthenosphere, lithosphere) and remesh their e
 Run the following script in the current directory:
 
 ```
-./06_reassign_and_remesh.sh
+./06_reassign_remesh.sh
 ```
 
 ---
