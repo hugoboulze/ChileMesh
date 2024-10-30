@@ -16,7 +16,7 @@ Run the following script in the current directory:
 
 - `interpolation.sh` : Interpolation (using GMT) of the southern part of the slab (Patagonia region)
 
-- `surface_slab.py`: Build the surface of the slab used in **Module 3** as a .csv file
+- `create_surface_slab.py`: Build the surface of the slab used in **Module 3** as a .csv file
 
 - `sam_slab2_dep_02.23.18.xyz`: Slab2.0 model (Hayes et al. 2018) from https://www.sciencebase.gov/catalog/item/5aa41473e4b0b1c392eaaf2d
 
