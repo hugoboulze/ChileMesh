@@ -12,7 +12,6 @@ Build the various horizontal planes: -4km, -54km, -70km, -200km, -270km, -670km
 ## TO DO: reecrire en full python en incluant union.inp
 
 import sys
-sys.path.append('./../../../')
 from constants import xmin, xmax, ymin, ymax, z70km, z90km, z200km, z270km, z670km
 
 scale = 2.5 ###  scale, coherent with ../05*/scale2.5.inp

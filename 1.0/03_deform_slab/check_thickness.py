@@ -17,8 +17,8 @@ mpl.rcParams['font.family'] = 'Open Sans'
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import zset
-import sys
-sys.path.append('..')
+# import sys
+# sys.path.append('..')
 from tools import PtXYZToLatiLongi
 # =============================================================================
 

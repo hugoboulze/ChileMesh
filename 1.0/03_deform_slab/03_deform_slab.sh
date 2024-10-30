@@ -1,22 +1,19 @@
 #!/bin/bash -e
 
-echo -e '\n'
-echo -e '##########################'
-echo -e 'Module 3 - Deform slab'
-echo -e '##########################'
+cat <<EOF
 
-if [ ! -d "out" ]; then
-    mkdir out
-    echo -e "out dir created"
-else
-    rm out/*
-    echo -e "out dir already exist - out dir cleaned"
-fi
+##########################
+Module 3 - Deform slab
+##########################
 
-cp ./* ./out
-cd ./out
+EOF
 
-Zclean -a
+rm -rf out
+rsync -a . out/ --exclude=out --exclude=$(basename $0)
+cd out/
+
+# for tools.py:
+export PYTHONPATH=$PWD/../..:${PYTHONPATH}
 
 echo -e '\n ***START*** \n'
 python3 deform_slab_iterative.py
@@ -30,5 +27,3 @@ else
     echo "Error: $f is missing or empty!"
     false
 fi
-
-cd ..

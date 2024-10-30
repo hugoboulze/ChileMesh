@@ -17,10 +17,9 @@ because a single corner would create upside-down triangles.
 """
 
 # =============================================================================
-import sys
+#import sys
 import numpy as np
 from zset import Mesh
-sys.path.append('../')
 from constants import xmin, ymin, zmin, xmax, ymax, zmax
 # =============================================================================
 
@@ -62,7 +61,7 @@ box.add_elements("s3d4", five_faces)
 box.save("box.geof")
 
 
-slab = Mesh('../03_deform_slab/out/slab_deformed_arrondi_FLAT.geof')
+slab = Mesh('../../03_deform_slab/out/slab_deformed_rounded_FLAT.geof')
 slab.transform('**scale 1. 1. 2.5')
 slab.save('slab.geo')
 # slab.add_nodes(corners) # NotImplementedError: Cannot (currently) add nodes to a non empty mesh

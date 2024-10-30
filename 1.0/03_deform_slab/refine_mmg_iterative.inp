@@ -1,8 +1,8 @@
 %
 ****mesher
- ***mesh ./out/slab_tmp2.geof
-  **open ./out/slab_tmp1.geof
-  
+ ***mesh slab_tmp2.geof
+  **open slab_tmp1.geof
+
   **adaptation
    *min_size .0005
    *max_size .05
@@ -13,7 +13,7 @@
     hausd 0.01   % pilote le raffinement de zones a forte courbure
    *preserve_elsets AW-ext SLAB-ext CH-ext CL-ext OC-ext
    *preserve_bsets
-   
+
     left-ext
     surface-ext
     surface_litho_oc-ext
@@ -23,7 +23,5 @@
     coast-ext
     face.1 face.2
     to_move_nodes not_to_move_nodes
-    
+
 ****return
-
-

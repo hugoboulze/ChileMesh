@@ -8,7 +8,7 @@ EOF
 
 # Recreate a fresh and clean out directory:
 rm -rf out
-rsync -a . out/ --exclude=out
+rsync -a . out/ --exclude=out --exclude=$(basename $0)
 cd out/
 
 echo -e '\n ***START*** \n'

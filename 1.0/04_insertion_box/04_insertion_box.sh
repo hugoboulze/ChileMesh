@@ -1,22 +1,20 @@
 #!/bin/bash -e
 
-echo -e '\n'
-echo -e '##############################'
-echo -e 'Module 4 - Insertion box'
-echo -e '##############################'
-echo -e '\n ***START*** \n'
+cat <<EOF
 
-if [ ! -d "out" ]; then
-    mkdir out
-    echo -e "out dir created"
-else
-    rm out/*
-    echo -e "out dir already exist - out dir cleaned"
-fi
+##############################
+Module 4 - Insertion box
+##############################
+***START***
 
+EOF
 
-cp ./* ./out
-cd ./out
+rm -rf out
+rsync -a . out/ --exclude=out --exclude=$(basename $0)
+cd out/
+
+# for constants.py:
+export PYTHONPATH=$PWD/../..:${PYTHONPATH}
 
 python3 insert_slab.py
 Zrun -m remplit
@@ -29,5 +27,3 @@ else
     echo "Error: $f is missing or empty!"
     false
 fi
-
-cd ..

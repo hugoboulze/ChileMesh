@@ -7,7 +7,7 @@ Module 2 - Slab 2D to 3D
 EOF
 
 rm -rf out
-rsync -a . out/ --exclude=out
+rsync -a . out/ --exclude=out --exclude=$(basename $0)
 cd out/
 
 echo -e '\n ***START*** \n'

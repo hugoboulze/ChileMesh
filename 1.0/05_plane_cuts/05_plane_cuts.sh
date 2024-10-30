@@ -1,21 +1,19 @@
 #!/bin/bash -e
-echo -e '\n'
-echo '##########################'
-echo 'Module 5 - Plane cuts'
-echo '##########################'
-if [ ! -d "out" ]; then
-    mkdir out
-    echo -e "out dir created"
-else
-    rm out/*
-    echo -e "out dir already exist - out dir cleaned"
-fi
+cat <<EOF
 
-cp ./* ./out
-cd ./out
+##############################
+Module 5 - Plane cuts
+##############################
+***START***
 
-Zclean -a
-echo -e '\n ***START*** \n'
+EOF
+
+rm -rf out
+rsync -a . out/ --exclude=out --exclude=$(basename $0)
+cd out/
+
+# for constants.py:
+export PYTHONPATH=$PWD/../..:${PYTHONPATH}
 
 python3 create_cutting_planes.py
 

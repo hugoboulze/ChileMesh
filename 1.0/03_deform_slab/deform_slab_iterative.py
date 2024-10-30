@@ -5,7 +5,7 @@ Created on Mon Oct  4 10:13:28 2021
 
 @author: boulze, garaud
 
-Main file that manage the iterative deformation of the slab
+Main file that manages the iterative deformation of the slab
 
 """
 
@@ -140,7 +140,7 @@ for j, disp in enumerate(disp_list):
     bad_slab.transform('**deform_mesh *input_problem slab_to_deform.ut *magnitude 1. **classical_renumbering ')
     bad_slab.transform('**XYZ_to_RThetaPhi')
     bad_slab.save(DIR+'slab_tmp1.geof')
-    zset.misc.run('refine_mmg_iterative.inp', options='-m')
+    zset.misc.run('refine_mmg_iterative.inp', options='-m', lock=False)
     bad_slab = zset.Mesh(DIR+'slab_tmp2.geof')
 
 bad_slab.transform('**classical_renumbering')
