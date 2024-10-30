@@ -26,34 +26,34 @@
  ***mesh ./mesh-Chile_v1.0.geo
   **open ./mesh_duplicated_tmp1.geo
 
-  **rename_set 
-   *bsets 
+  **rename_set
+   *bsets
     SIDE1 Seisme_Subduction_Elargi
     SIDE0 Seisme_Chile_Elargi
 
   **nset Seisme_Chile_Elargi  *use_bset Seisme_Chile_Elargi  *function 1. ;
   **nset Seisme_Subduction_Elargi *use_bset Seisme_Subduction_Elargi *function 1. ;
 
-  **nset Seisme_Subduction *use_nset Seisme_Subduction_Elargi *function 1. ; 
+  **nset Seisme_Subduction *use_nset Seisme_Subduction_Elargi *function 1. ;
   **remove_nodes_from_nset *nset_name Seisme_Subduction *nsets_to_remove FRONT
   **nset Seisme_Chile  *use_nset Seisme_Chile_Elargi  *function 1. ;
   **remove_nodes_from_nset *nset_name Seisme_Chile  *nsets_to_remove FRONT
 
   **bset Seisme_Subduction *use_nset Seisme_Subduction
-  **bset Seisme_Chile  *use_nset Seisme_Chile 
+  **bset Seisme_Chile  *use_nset Seisme_Chile
 
 
-  **remove_set 
-   *nsets ALL 
+  **remove_set
+   *nsets ALL
    *bsets fault_plane sides0 sides1
    *elsets SIDE0 SIDE1 sides0 sides1
   **rename_set *bsets FRONT0 bord_fault_plane
-  
 
-  **sort_nset *nset_name Seisme_Subduction *criterion (z1>z2) ; 
-  **sort_nset *nset_name Seisme_Chile  *criterion (z1>z2) ; 
+
+  **sort_nset *nset_name Seisme_Subduction *criterion (z1>z2) ;
+  **sort_nset *nset_name Seisme_Chile  *criterion (z1>z2) ;
 
   %km to m
   **scale 1000.
 
-****return 
+****return

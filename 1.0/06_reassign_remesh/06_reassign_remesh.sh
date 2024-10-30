@@ -18,10 +18,10 @@ python3 disconnect_lithospheres.py
 Zrun -m cut_asthenospheres.inp
 python3 disconnect_asthenospheres.py
 Zrun -m reassign_elset.inp
-# par ici il manquerait : python3 create_mmg_metric.py?
+python3 create_mmg_metric.py
 Zrun -m remesh.inp
 Zrun -m create_boundaries_and_remove_ocean.inp
-Zrun duplicate_nodes_interface.inp
+Zrun -m duplicate_nodes_interface.inp
 Zrun -m export.inp
 
 f=mesh-Chile_v1.0.geo
