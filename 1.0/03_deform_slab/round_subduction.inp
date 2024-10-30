@@ -1,0 +1,32 @@
+%
+% Round the coordinates of the mesh at given depth
+%
+****mesher
+ ***mesh ./slab_deformed_rounded_FLAT.geof
+  **open ./slab_deformed_FLAT.geof
+
+  **nset P0
+   *function abs(z-1.0)<1.e-5;   % 0km
+  **function
+   *nset P0
+   *ztrans 1.; 
+
+  **nset P04
+   *function abs(z-0.999372)<1.e-5;
+  **function
+   *nset P04
+   *ztrans 0.999372;   
+   
+  **nset P54
+   *function abs(z-0.9915240)<1.e-5;   % 54km
+  **function
+   *nset P54
+   *ztrans 0.9915240; 
+   
+  **nset P70
+   *function abs(z-0.9890127)<1.e-5;   % 70km
+  **function
+   *nset P70
+   *ztrans 0.9890127; 
+
+****return

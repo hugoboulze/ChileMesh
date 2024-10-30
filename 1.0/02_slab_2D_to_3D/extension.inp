@@ -1,0 +1,55 @@
+%
+% Create the 3D mesh: Extension of the 2D mesh along the path of the Chilean subction trench
+%
+****mesher
+
+ %Rebuild the slab from elementary elset of the 2D geometry
+ ***mesh ./tmp1.geof
+  **open ./subduction_2D_chile.geof
+
+ **elset SLAB
+  *add_elset S1 S2
+
+ % flat 2D to spherical 2D
+ ***mesh ./tmp1_bis.geof
+  **open ./tmp1.geof
+  **XY_to_RTheta
+  **rotate
+    x1 0. -1.
+    x2 1. 0.
+  **translate -6371. 0. 0.
+  **elset mesh_base
+   *add_elset ALL_ELEMENT
+
+ % make the union between the trench path and the spherical 2D subduction interface
+ ***mesh ./tmp2.geof
+  **open ./trench_chile.geof
+
+  **union
+   *add ./tmp1_bis.geof
+   *tolerance 0.
+  **rename_set
+   *nsets ChileanFault zzChileanFault
+  **sort_sets_alphabetically
+
+
+ % extend the spherical 2D mesh all along the subduction trench path ==> 2D to 3D
+ ***mesh ./tmp3.geof
+  **open ./tmp2.geof
+
+  **extension_along_nset_improved
+   *nset_to_follow zzChileanFault
+   *elset_names
+    AW SLAB CH CL OC
+   *surface_function (x^2+y^2+z^2);
+
+  **remove_set
+   *null_sets
+
+ % from spherical 3D to flat 3D
+ ***mesh ./tmp4.geof
+  **open ./tmp3.geof
+  **XYZ_to_RThetaPhi
+  **check_orientation
+
+****return

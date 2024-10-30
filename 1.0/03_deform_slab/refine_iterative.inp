@@ -1,0 +1,31 @@
+%
+% Refine the slab at each step of the deformation process
+%
+****mesher
+ ***mesh ./slab_tmp2.geof
+  **open ./slab_tmp1.geof
+  
+  **adaptation
+   *min_size .0005
+   *max_size .05
+   *verbose   6
+   *metric scalar value 0.005
+   *volume_mesher mmg3d
+    hgrad 1.25   % 2 elements voisins sont a ce % pres pareil
+    hausd 0.01   % pilote le raffinement de zones a forte courbure
+   *preserve_elsets AW-ext SLAB-ext CH-ext CL-ext OC-ext
+   *preserve_bsets
+   
+    left-ext
+    surface-ext
+    surface_litho_oc-ext
+    surface_earth1-ext
+    surface_earth2-ext
+    surface_aw-ext
+    coast-ext
+    face.1 face.2
+    to_move_nodes not_to_move_nodes
+    
+****return
+
+

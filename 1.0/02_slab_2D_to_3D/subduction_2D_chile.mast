@@ -1,0 +1,262 @@
+****master
+***geometry
+ **point point32
+  *position 7.910100000000000e+02 -4.000000000000000e+02 0.000000000000000e+00
+ **point point25
+  *position -5.000000000000000e+01 -4.000000000000000e+00 0.000000000000000e+00
+ **point point28
+  *position 1.000000000000000e+02 0.000000000000000e+00 0.000000000000000e+00
+ **point point35
+  *position 4.083972789466435e+01 -1.069657217128162e+01 0.000000000000000e+00
+ **point point23
+  *position 8.110000000000000e+02 -4.000000000000000e+02 0.000000000000000e+00
+ **point point66
+  *position 9.520758533026590e+01 -1.692250930733223e+01 0.000000000000000e+00
+ **point point83
+  *position 1.469091561833355e+02 -3.441471104734214e+01 0.000000000000000e+00
+ **point point10
+  *position 1.129693238304787e+02 -2.022490904965616e+01 0.000000000000000e+00
+ **point point24
+  *position 1.310132853345292e+02 -2.645982204863938e+01 0.000000000000000e+00
+ **point point29
+  *position 7.530180044096358e+01 -1.443704704311262e+01 0.000000000000000e+00
+ **point point54
+  *position -5.000000000000000e+01 -5.400000000000000e+01 0.000000000000000e+00
+ **point point61
+  *position 1.675755908498223e+01 -5.743146834253830e+01 0.000000000000000e+00
+ **point point63
+  *position 3.712713907150271e+01 -5.945828599986692e+01 0.000000000000000e+00
+ **point point64
+  *position 5.654375625163625e+01 -6.172355279335184e+01 0.000000000000000e+00
+ **point point65
+  *position 7.298236466181064e+01 -6.398881958683677e+01 0.000000000000000e+00
+ **point point67
+  *position 9.086000000000000e+01 -6.697000000000000e+01 0.000000000000000e+00
+ **point point69
+  *position 1.176200000000000e+02 -7.567000000000000e+01 0.000000000000000e+00
+ **point point71
+  *position 1.307234141890470e+02 -8.259611227011249e+01 0.000000000000000e+00
+ **point point9
+  *position 1.038800000000000e+02 -7.000000000000000e+01 0.000000000000000e+00
+ **point point12
+  *position 1.439200000000000e+02 -9.000000000000000e+01 0.000000000000000e+00
+ **point point31
+  *position 6.903900000000000e+02 -4.000000000000000e+02 0.000000000000000e+00
+ **point point0
+  *position 2.000000000000000e+02 -5.213000000000000e+01 0.000000000000000e+00
+ **point point7
+  *position 1.450000000000000e+02 -2.022490000000000e+01 0.000000000000000e+00
+ **point point8
+  *position 1.450000000000000e+02 0.000000000000000e+00 0.000000000000000e+00
+ **point point4
+  *position 2.276377689079874e+01 -8.495098708038370e+00 0.000000000000000e+00
+ **point point2
+  *position 2.485532541550350e+01 -2.879469526906348e+00 0.000000000000000e+00
+ **point point5
+  *position 0.000000000000000e+00 -6.000000000000000e+00 0.000000000000000e+00
+ **point point6
+  *position 0.000000000000000e+00 -5.600000000000000e+01 0.000000000000000e+00
+ **point point1
+  *position -5.000000000000000e+01 0.000000000000000e+00 0.000000000000000e+00
+ **line line70
+  *p1 point32
+  *p2 point23
+ **line line8
+  *p1 point10
+  *p2 point24
+ **line line9
+  *p1 point24
+  *p2 point83
+ **line line20
+  *p1 point35
+  *p2 point29
+  *cuts 3
+ **line line31
+  *p1 point29
+  *p2 point66
+ **line line62
+  *p1 point12
+  *p2 point71
+ **line line63
+  *p1 point71
+  *p2 point69
+ **line line65
+  *p1 point69
+  *p2 point9
+ **line line72
+  *p1 point9
+  *p2 point67
+ **line line73
+  *p1 point67
+  *p2 point65
+ **line line74
+  *p1 point65
+  *p2 point64
+ **line line75
+  *p1 point64
+  *p2 point63
+ **line line76
+  *p1 point63
+  *p2 point61
+ **line line6
+  *p1 point32
+  *p2 point31
+  *cuts 4
+ **line line23
+  *p1 point31
+  *p2 point12
+  *cuts 30
+ **line line27
+  *p1 point32
+  *p2 point83
+  *cuts 50
+ **line line2
+  *p1 point23
+  *p2 point0
+  *cuts 50
+ **line line3
+  *p1 point66
+  *p2 point10
+ **line line12
+  *p1 point10
+  *p2 point7
+  *cuts 2
+ **line line14
+  *p1 point28
+  *p2 point8
+  *cuts 5
+ **line line15
+  *p1 point8
+  *p2 point7
+  *cuts 2
+ **line line16
+  *p1 point0
+  *p2 point7
+  *cuts 5
+ **line line19
+  *p1 point25
+  *p2 point54
+  *cuts 4
+ **line line13
+  *p1 point4
+  *p2 point35
+  *cuts 3
+ **line line4
+  *p1 point5
+  *p2 point25
+  *cuts 4
+ **line line21
+  *p1 point25
+  *p2 point54
+ **line line24
+  *p1 point54
+  *p2 point6
+  *cuts 4
+ **line line29
+  *p1 point6
+  *p2 point5
+  *cuts 4
+ **line line32
+  *p1 point5
+  *p2 point4
+ **line line36
+  *p1 point2
+  *p2 point5
+  *cuts 4
+ **line line38
+  *p1 point28
+  *p2 point2
+  *cuts 4
+ **line line0
+  *p1 point61
+  *p2 point6
+ **line line37
+  *p1 point2
+  *p2 point4
+  *cuts 2
+ **line line1
+  *p1 point28
+  *p2 point28
+ **line line5
+  *p1 point28
+  *p2 point1
+ **line line10
+  *p1 point1
+  *p2 point25
+ **domain delaunay2D Free0
+  *element c2d3
+  *name S1
+  *extras 2.900000000000000e+01 1.000000000000000e-09
+  *b line29 line4 line19 line24 
+ **domain delaunay2D Free1
+  *element c2d3
+  *name S2
+  *extras 2.900000000000000e+01 1.000000000000000e-09
+  *b line20 line13 line32 line29 line0 line76 line75 line74 line73 line72 line65 line63 line62 line23 line6 line27 line9 line8 line3 line31 
+ **domain delaunay2D Free2
+  *element c2d3
+  *name CH
+  *extras 2.900000000000000e+01 1.000000000000000e-09
+  *b line2 line16 line12 line8 line9 line27 line70 
+ **domain delaunay2D Free4
+  *element c2d3
+  *name AW
+  *extras 2.900000000000000e+01 1.000000000000000e-09
+  *b line36 line32 line37 
+ **domain delaunay2D Free6
+  *element c2d3
+  *name CL
+  *extras 2.900000000000000e+01 1.000000000000000e-09
+  *b line15 line14 line38 line37 line13 line20 line31 line3 line12 
+ **domain bset Px0y8
+  *name Px0y8
+  *order 3
+  *p point5 
+ **domain bset surface_litho_oc
+  *name surface_litho_oc
+  *order 1
+  *b line4 
+ **domain bset surface_aw
+  *name surface_aw
+  *order 1
+  *b line36 
+ **domain bset coast
+  *name coast
+  *order 3
+  *p point28 
+ **domain bset surface_earth1
+  *name surface_earth1
+  *order 1
+  *b line38 
+ **domain bset surface_earth2
+  *name surface_earth2
+  *order 1
+  *b line14 
+ **domain bset surface_slab
+  *name surface_slab
+  *order 1
+  *b line13 line20 line31 line3 line8 line9 line27 
+ **domain bset base_aw
+  *name base_aw
+  *order 1
+  *b line32 
+ **domain bset corner_aw
+  *name corner_aw
+  *order 3
+  *p point4 
+ **domain bset left
+  *name left
+  *order 1
+  *b line10 line19 
+ **domain bset surface
+  *name surface
+  *order 1
+  *b line5 line14 
+ **domain delaunay2D Free3
+  *element c2d3
+  *name OC
+  *extras 2.900000000000000e+01 1.000000000000000e-09
+  *b line5 line10 line4 line36 line38 
+***plotting
+  **default_options 1 0 1
+****return

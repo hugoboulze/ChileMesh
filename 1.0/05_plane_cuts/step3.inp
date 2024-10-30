@@ -1,0 +1,70 @@
+****mesher
+
+% ***global_parameter
+ %   Mesher.MeshFusion 1.e-3
+ ***mesh mesh-before-knife70.geo
+  **open mesh_knifed_200_270_670.geo
+
+% grep '^3' plan-*geof  | cut -d ' ' -f 1,4
+% plan-04.geof  :3 0.24689280275926284 -0.3290658503988659 2.49843
+% plan-200.geof :3 0.24689280275926284 -0.3290658503988659 2.4215195
+% plan-270.geof :3 2.4689280275928e-01 -3.290658503988e-01 2.394050000000000e+00
+% plan-54.geof  :3 0.24689280275926284 -0.3290658503988659 2.4788099999999997
+% plan-70.geof  :3 0.24689280275926284 -0.3290658503988659 2.47253175
+
+
+  %% 2.47253175, c'est 70km quand z*=2.5
+  % **nset P70
+  %  *function abs(z-2.47253175)<1.e-4;
+  % **function
+  %  *nset P70
+  %  *ztrans 2.47253175;
+
+  **elset COMP-270-670
+   *function (z<2.39405+1.e-4)*(z>2.23709 - 1.e-4) ;
+   *use_elset COMP
+
+  **elset COMP-670-BOTTOM
+   *function (z<2.23709 + 1.e-4) ;
+   *use_elset COMP
+
+  **elset COMP-200-270
+   *function (z<2.4215195+1.e-4)*(z>2.39405-1.e-4) ;
+   *use_elset COMP
+
+  **elset COMP-0-200
+   *function (z>2.4215195 - 1.e-4);
+   *use_elset COMP
+
+  **elset CH-200-270
+   *function (z<2.4215195+1.e-5)*(z>2.39405-1.e-5) ;
+   *use_elset CH
+
+  **elset CH-0-200
+   *function (z>2.4215195 - 1.e-4);
+   *use_elset CH
+
+
+  **elset SLAB-270-BOTTOM
+   *function (z<2.39405+1.e-4) ;
+   *use_elset SLAB
+
+  **elset SLAB-200-270
+   *function (z<2.4215195+1.e-4)*(z>2.39405-1.e-4) ;
+   *use_elset SLAB
+
+  **elset SLAB-0-200
+   *function (z>2.4215195 - 1.e-4);
+   *use_elset SLAB
+
+
+  **remove_set
+   *elsets ASSO_PB AUTO
+   *nsets lip
+   *bsets FRONTS Nlip
+
+  **elset CUT_ME
+   *use_elset CH COMP
+   *function 1.;
+
+****return

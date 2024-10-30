@@ -1,0 +1,100 @@
+%
+% Convert the 3D spherical mesh in a 3D flat frame. Remesh the mesh geometries using meshgems.
+%
+
+****mesher
+
+ ***global_parameter
+    Mesher.MeshFusion 1.e-3
+
+ ***mesh ./slab_refined_FLAT.geof
+  **open ./slab_to_refine_SPHE.geof
+
+  % from spherical 3D to flat 3D. Easier to refine in a flat geometry
+  **XYZ_to_RThetaPhi
+
+
+  **bset Px0y8-ext *use_nset Px0y8-ext *use_dimension 1 *function 1.;
+  **bset coast-ext *use_nset coast-ext *use_dimension 1 *function 1.;
+  **bset Px-50y-54-ext *use_nset not_to_move_nodes
+   *use_dimension 1
+   *function z< 0.991524+1.e-4  ; % would be in spherical : (x^2+y^2+z^2)<(6371-53)^2;
+
+  **bset left-ext *use_nset left-ext *function 1.;
+  **bset surface-ext *use_nset surface-ext *function 1.;
+  **bset surface_earth1-ext *use_nset surface_earth1-ext *function 1.;
+  **bset surface_earth2-ext *use_nset surface_earth2-ext *function 1.;
+  **bset surface_aw-ext *use_nset surface_aw-ext *function 1.;
+  **bset surface_litho_oc-ext *use_nset surface_litho_oc-ext *function 1.;
+  **bset surface_slab-ext *use_nset surface_slab-ext *function 1.;
+  **bset base_aw-ext *use_nset base_aw-ext *function 1.;
+  **bset to_move_nodes *use_nset to_move_nodes *function 1.;
+  **bset not_to_move_nodes *use_nset not_to_move_nodes *function 1.;
+
+  **mesh_gems
+   *absolu
+   *nb_iter_vol 2
+   *nb_iter_surf 4
+
+   *max_size 0.01  % in flat geometry, the mesh box is around ~1unit of side
+   *min_size 0.001
+%   *mesh_cleaner
+   *preserve_elset3d
+     AW-ext SLAB-ext CH-ext CL-ext OC-ext
+
+   *preserve_liset Px0y8-ext Px-50y-54-ext coast-ext corner_aw-ext
+
+   *preserve_faset
+    %% attention : il raffine un peu moins et perd un elset si je mets 2 nests a preserver ... avec tous, ca semble bon !
+    %%   point de vigilance, verifier que (50 ou) 100 elsets sont reconstruits en fin de ce script
+    left-ext
+    surface-ext
+    surface_earth1-ext
+    surface_earth2-ext
+    surface_aw-ext
+    surface_litho_oc-ext
+    surface_slab-ext
+    face.1
+    face.2
+    to_move_nodes
+    not_to_move_nodes
+
+
+  **remove_set
+   *elsets_start_with ELSET
+
+  %%% we replace (to be prudent) the nodes at the right depth
+  **function
+   *nset Px-50y-54-ext
+   *ztrans 0.991524;
+
+
+  **mesh_gems
+   *absolu
+   *nb_iter_vol 2
+   *nb_iter_surf 4
+   *max_size 0.01
+   *preserve_elset3d AW-ext SLAB-ext CH-ext CL-ext OC-ext
+   *preserve_liset Px0y8-ext Px-50y-54-ext coast-ext corner_aw-ext
+   *preserve_faset
+    left-ext
+    surface-ext
+    surface_earth1-ext
+    surface_earth2-ext
+    surface_aw-ext
+    surface_litho_oc-ext
+    surface_slab-ext
+    face.1
+    face.2
+    to_move_nodes
+    not_to_move_nodes
+
+  **remove_set
+   *elsets_start_with ELSET
+
+  %%% we replace (to be prudent) the nodes at the right depth
+  **function
+   *nset Px-50y-54-ext
+   *ztrans 0.991524;
+
+****return

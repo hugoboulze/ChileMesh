@@ -1,0 +1,12 @@
+****mesher
+
+ ***mesh verif.geof
+  **open mesh_knifed_NordSud_04_54_70_200_270_670.geo
+
+  **scale 1. 1. 3.   % pour se rapprocher d'un cube parfait
+
+  **mesh_gems
+   *optim_style -2
+ ***shell grep -A 1 Vertices _mesh_out_to_ghs3d.mesh
+
+****return

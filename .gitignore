@@ -1,0 +1,35 @@
+# zebulon files
+*.integ
+*.node
+*.ctnod
+*.msg
+*.msgp
+*.contour
+*.ut
+zmaster.journal
+
+# Zcracks
+_mesh_out_*
+TO_RE*.geo
+_after.geof
+ZCRACKS_MESHER.inp
+REMESHED*geo
+INPUT_SURFACE.geo
+CONVERT_SURF.inp
+KEPT.mesh
+MESHING_OUTPUT
+MG_VOL_MESH
+*_CRACKI.geo
+*_REFINED.geo
+constante.sol
+crack.*
+distene_mesh.dat
+surface_mesh_input.sol
+
+# python
+__pycache__
+
+.geo*
+
+
+./out

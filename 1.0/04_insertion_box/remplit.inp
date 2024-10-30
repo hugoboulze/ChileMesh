@@ -1,0 +1,45 @@
+%
+%
+%
+****mesher
+
+ ***mesh tmp1.geo
+  **open slab-inserted.geo
+
+  **elset_by_element_type
+
+  **remesh_elset_skin
+   *elset AW SLAB CH CL OC
+
+  **delete_elset c3d4
+
+  **mesh_gems
+   *min_size 0.0001
+   *yams_only
+
+  **mesh_gems
+   *max_size 0.04
+****return
+
+****mesher
+ ***mesh mesh-before-knife.geo
+  **open tmp1.geo
+  **reassign_elsets
+   *mesh slab.geo
+   *elsets  AW SLAB CH CL OC
+
+  **remove_set
+   *elsets ALL_ELEMENT ELSET0 ELSET1 ELSET2 ELSET3 ELSET4 ELSET5 c3d4
+
+
+% now, to finish as in the auto-insertion
+  **elset MICRO *add_elset AW SLAB CH CL OC
+% lines copied from ZCRACKS_MESHER.inp
+  **remove_set *bsets INTERFACE_MICRO INTERFACE_MICRO0 SURFACE
+  **unshared_faces SURFACE **unshared_faces INTERFACE_MICRO0 *elsets MICRO
+  **join_bsets INTERFACE_MICRO *bsets INTERFACE_MICRO0 SURFACE *remove *remove_duplicates
+  **elset_near_nset *nset INTERFACE_MICRO *radius 0.250000 % *distance_file INTERFACE_DST
+  **remove_set *bsets INTERFACE_MICRO0 *elsets MACRO
+  **elset MACRO *use_elsets ALL_ELEMENT *not_in_elsets MICRO
+
+****return

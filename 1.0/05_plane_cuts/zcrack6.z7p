@@ -1,0 +1,15 @@
+
+#include <Zcracks_base.z7p> // local version: contains the patch to change refinement_origin
+
+int main()
+{
+  init_var();
+
+  init_values(0);              // start the process
+  datafile = "zcrack6.dat";  // global var
+  init_values(1);              // re-reads the .dat file
+
+  refine_origin = "CL-surf";   // global var, not visible in Zcracks
+
+  intersect(surf_mesh);
+}

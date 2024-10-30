@@ -1,0 +1,40 @@
+%
+% Final mesh refinement using MMG. Size of the elements depends on the distance to the fault plane
+%
+
+****mesher
+ ***mesh mesh-remeshed.geof
+  **open mesh-before-remeshing.geo
+  **adaptation
+   *min_size .0005
+   *max_size .05
+   *verbose   6
+   *metric from_file file metric.dat
+   *volume_mesher mmg3d
+    hgrad 1.25
+    hausd 0.01  
+    
+   *preserve_elsets
+    
+    ASTHENOSPHERE-70-200-OCEANIC
+    ASTHENOSPHERE-70-200-CONTINENTAL
+    ASTHENOSPHERE-200-270-OCEANIC
+    ASTHENOSPHERE-200-270-CONTINENTAL
+    AW
+    OCEAN
+    CH-0-70
+    CH-70-200
+    CH-200-270
+    CH-270-670
+    LITHOSPHERE_CONTINENTAL
+    LITHOSPHERE_OCEANIC
+    UPPER-MANTLE
+    LOWER-MANTLE
+    SLAB
+    LAYER-54-70-OCEANIC
+    
+   *preserve_bsets
+    fault_plane
+    
+****return 
+

@@ -1,0 +1,31 @@
+
+****mesher
+
+ ***mesh mesh-before-cut-NordSud.geo
+  **open mesh_knifed_04_54_70_200_270_670.geo
+
+  **elset COMP-unassigned
+   *use_elset COMP
+   *not_in_elsets COMP-54-70 COMP-70-200 COMP-200-270 COMP-270-670 COMP-670-BOTTOM
+
+
+  **elset COMP-04-54
+   *function (z < 2.49843 +1.e-5) ;
+   *use_elset COMP-unassigned
+
+  **elset COMP-00-04
+   *use_elset COMP-unassigned
+   *not_in_elsets COMP-04-54
+
+  **remove_set
+   *elsets ASSO_PB AUTO COMP-unassigned COMP-0-54 COMP
+   *nsets lip
+   *bsets FRONTS Nlip
+
+  **elset CUT_ME
+   *use_elset COMP-00-04 COMP-04-54 COMP-54-70 COMP-70-200 COMP-200-270
+   *function 1.;
+
+  **sort_sets_alphabetically
+
+****return

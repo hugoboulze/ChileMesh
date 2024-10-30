@@ -1,0 +1,42 @@
+
+****mesher
+
+ ***mesh mesh-before-knife4.geo
+  **open mesh_knifed_54_70_200_270_670.geo
+
+% grep '^3' plan-*geof  | cut -d ' ' -f 1,4
+% plan-04.geof:3 2.49843
+
+  **extract_surface *elset SLAB *ridges_only  % super important, spurious points in nset otherwise (easily spotted in Zpv)
+  **nset P4
+   *use_bset RIDGES
+   *function abs(z- 2.49843 ) < 1.1e-4;
+  **function
+   *nset P4
+   *ztrans 2.49843 ;
+
+  **elset COMP-unassigned
+   *use_elset COMP
+   *not_in_elsets COMP-70-200 COMP-200-270 COMP-270-670 COMP-670-BOTTOM
+
+  **elset COMP-54-70
+   *function (z < 2.47881 +1.e-5) ;
+   *use_elset COMP-unassigned
+
+  **elset COMP-0-54
+   *use_elset COMP-unassigned
+   *not_in_elsets COMP-54-70
+
+  **sort_sets_alphabetically
+
+  **remove_set
+   *elsets ASSO_PB AUTO COMP-unassigned
+   *nsets lip
+   *bsets FRONTS Nlip
+
+  **elset CUT_ME
+   *use_elset COMP-0-54 %% OCEAN?
+   *function 1.;
+   *remove_elset CL
+
+****return

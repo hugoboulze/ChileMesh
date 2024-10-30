@@ -1,0 +1,54 @@
+****mesher
+
+% ***global_parameter
+ %   Mesher.MeshFusion 1.e-3
+
+ ***mesh mesh-before-knife1.geo
+%  **open ../05_make_insertion_box/mesh-before-knife.geo
+  **open ../05_manual_insertion_box/mesh-before-knife.geo
+
+%  **scale 1. 1. 2.5  %  scale was already done during ../05*/scale2.5.inp
+
+  **elset COMP
+   *use_elset CL MACRO
+   *function 1.;
+
+  **elset CUT_ME
+   *use_elset COMP CH
+   *function 1.;
+
+  % let's fix this right away:
+  **rename_set
+   *elsets OC OCEAN
+
+% possible verification : CUT_ME + SLAB + AW == ALL
+
+  **rename_set
+   *bsets INTERFACE_MICRO CL-surf   %% todo, c'est plutot une SLAB-surf
+
+  **remove_set
+   *elsets MICRO ASSO_PB AUTO MACRO
+   *nsets lip INTERFACE_MICRO
+   *bsets Nlip INTERFACE_MICRO FRONTS SURFACE
+
+  **nset P200
+   *function abs(z - 2.42152) < 1.e-4;
+%    *use_elset CH % SLAB %% faudrait-il restreindre a SLAB+CH ?
+  **function
+   *nset P200
+   *ztrans 2.42152 ;
+
+  **nset suspect
+   *point nearest  -0.370429 -1.15879 2.42191
+  **function
+   *nset suspect
+   *ztrans 2.42152 ;
+
+ ***mesh plans-200-270-670.geof
+  **open plan-200.geof
+  **union
+   *add plan-270.geof
+  **union
+   *add plan-670.geof
+
+****return

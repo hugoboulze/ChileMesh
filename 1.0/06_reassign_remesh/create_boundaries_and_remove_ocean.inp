@@ -1,0 +1,29 @@
+%
+% Create group of nodes for boundary conditions, remove the ocean geometry and transform the mesh in 3D spherical coordinates
+%
+****mesher
+ 
+ ***mesh ./mesh_before_duplication.geo
+  **open ./mesh_remeshed.geo
+     
+  **delete_elset OCEAN OCEAN2
+  **extract_surface
+  
+  **rename_set
+   *bsets
+    surface_0 south
+    surface_3 west
+    surface_4 earth_surface
+    surface_5 bottom
+    surface_6 east
+    surface_9 north
+  
+  **remove_set
+   *nsets_start_with surface 
+   *bsets_start_with surface
+ 
+  **RThetaPhi_to_XYZ
+
+  **check_orientation
+  
+****return

@@ -1,0 +1,46 @@
+%
+% Deform the slab by moving the 'to_move_nodes'.
+%
+****calcul 
+ ***mesh
+  **file ./slab_to_deform.geof
+
+ ***resolution 
+  **sequence
+   *time 1. 
+   *increment 1 % 10 
+   *algorithm eeeeee % EEEEEE not mpc compatible
+
+ ***bc
+  **impose_nodal_dof 
+    not_to_move_nodes   U1 0. 
+    not_to_move_nodes   U2 0. 
+    not_to_move_nodes   U3 0. 
+    
+    to_move_nodes U1  ascii_file ./U1.dat time
+    to_move_nodes U2  ascii_file ./U2.dat time
+    to_move_nodes U3  ascii_file ./U3.dat time
+
+ @include ./free_slip_eqs.inp
+
+ ***material
+
+  **elset AW-ext     *this_file 1
+  **elset SLAB-ext   *this_file 1
+  **elset CH-ext    *this_file 1
+  **elset OC-ext    *this_file 1
+  **elset CL-ext  *this_file 2
+
+****return
+ 
+ ***behavior linear_elastic  % hard
+  **elasticity
+    young 200000.  % in MPa
+    poisson 0.
+ ***return
+
+ ***behavior linear_elastic  % soft
+  **elasticity
+    young 20000.  % in MPa
+    poisson 0.
+ ***return

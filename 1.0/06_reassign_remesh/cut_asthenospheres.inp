@@ -1,0 +1,57 @@
+%
+% Cut the asthenosphere according to the vertical planes, in order to separate the oceanic and continental parts
+%      WARNING: coordinates must manually modified
+****mesher
+
+ ***mesh ./mesh_asthenospheres_to_disconnect.geo
+  **open ./mesh_lithospheres_disconnected.geo
+
+  **remove_set
+   *elsets ASSO_PB AUTO
+   *nsets lip
+   *bsets FRONTS Nlip
+
+   % choose between three points in the plane: A(Ax,Ay), B(Bx,By) et C(Cx,Cy).
+   % (x-ax)*nx + (y-ay)*ny where nx and ny are normal components (norm 1) to a given plane, n(nx, ny) = np.cross(AB, AC).
+   % for values, see tools.py
+
+   % we define the asthenosphere 70-270 (will be separated later)
+   **elset ASTHENO_tmp
+    *use_elset COMP-70-200 COMP-200-270
+    *function 1;
+
+   % part of the asthenosphere southern that the plane defined by the slab profile at south
+   **elset ASTHENO_SLAB_south
+    *use_elset ASTHENO_tmp
+    *function  (x+0.823698)*(-1.438146e-04) + (y+1.34273)*(-4.045644e-05) > -1e-8;
+    *allow_partial %sometimes it is usefull, sometimes not
+
+   % part of the asthenosphere northern that the plane defined by the slab profile at south
+   **elset  ASTHENO_SLAB_north
+   *use_elset ASTHENO_tmp
+   *function  (x+0.181750)*(1.393020e-04) + (y+1.40680)*(-7.310412e-05) > -1e-8 ;
+
+
+   **elset ASTHENO_SLICE
+    *use_elset  ASTHENO_SLAB_north  ASTHENO_SLAB_south
+    *function 1;
+
+   % PART OF THE ASTHENOSPHERE IN THE OCEANIC DOMAIN - step 1, right from north vertical plane
+   **elset ASTHENO_OCEAN_step1
+    *use_elset ASTHENO_SLICE
+    *function (x-0.226893)*(0.00493367) + (y+1.63963)*0.00865915 < 1e-7;
+
+   % PART OF THE ASTHENOSPHERE IN THE OCEANIC DOMAIN - step 2, this time at right from BOTH planes
+   **elset ASTHENO_OCEAN_step2
+    *use_elset ASTHENO_OCEAN_step1
+    *function (x+1.0472)*(0.00074652) + (y+1.37798)*(-0.00473596) > -1e-7;
+
+   % part of the asthenosphere that is separated after using disconnect_asthenosphere.py
+   **elset ASTHENO_TO_DISCONNECT
+    *use_elset ASTHENO_tmp
+    *not_in_elsets ASTHENO_SLICE
+
+   **remove_set
+    *elsets ASTHENO_SLAB_south ASTHENO_SLAB_north COMP-70-200 COMP-200-270 ASTHENO_OCEAN_step1
+
+****return

@@ -1,0 +1,49 @@
+
+****mesher
+
+% ***global_parameter
+ %   Mesher.MeshFusion 1.e-3
+ ***mesh mesh-before-knife54.geo
+  **open mesh_knifed_70_200_270_670.geo
+
+% [jdgaraud@spiro-v206-clu zcracks2_knifes]$ grep '^3' plan-*geof  | cut -d ' ' -f 1,4
+% plan-04.geof:3 2.49843
+% plan-200.geof:3 2.4215195
+% plan-270.geof:3 2.394050000000000e+00
+% plan-54.geof:3 2.478810000000000e+00
+% plan-70.geof:3 2.472531750000000e+00
+
+
+  %% 2.47881 c'est 54km quand z*=2.5
+  **nset P54
+   *function abs(z-2.47881)<1.e-5;
+  **function
+   *nset P54
+   *ztrans 2.47881;
+
+
+  **elset COMP-0-70
+   *function (z> 2.47253175 -1.e-5) ;
+   *use_elset COMP
+
+  **elset COMP-70-200
+   *function (z<2.47253175 +1.e-5)*(z> 2.4215195 -1.e-5) ;
+   *use_elset COMP
+
+  **elset CH-70-200
+   *function (z<2.47253175 +1.e-5)*(z>2.4215195 -1.e-5) ;
+   *use_elset CH
+
+
+  **remove_set
+   *elsets ASSO_PB AUTO
+   *nsets lip
+   *bsets FRONTS Nlip
+
+  **elset CUT_ME
+   *use_elset COMP-0-70
+   *function 1.;
+
+
+
+****return

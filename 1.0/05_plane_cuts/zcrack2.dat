@@ -1,0 +1,68 @@
+%-----------------------------------------------------------
+% ZCRACKS data file                                        |
+%-----------------------------------------------------------
+
+% General options
+
+*editor gedit
+*sane_name mesh-before-knife1
+*crack_name crack
+*cracked_name mesh_knifed_200_270_670
+*gradation 1.300000e+00
+*min_size 5.000000e-03
+*max_size 1.000000e-01
+*nb_iter_remeshing -2
+
+% Import options
+
+*format zebulon_templated
+*quadratic_input_mesh
+*hotspot_number 1
+*hotspot_zone_radius 1.000000e+00
+
+% Cracks options
+
+*crack_surface_id 0
+*crack_center 0.000000e+00 0.000000e+00 8.500000e-01
+*crack_normal 0.000000e+00 0.000000e+00 1.000000e+00
+*crack_radius 3.000000e+01
+*crack_surface_from_file plans-200-270-670.geof
+
+% Insertion options
+
+*elset_names AW SLAB CH CL COMP OCEAN
+*faset_names CL-surf
+*elset_radius 2.000000e+00
+*frozen_elset
+*meshcleaner
+*no_quarter_nodes
+
+% SIF options
+
+*nb_front_nodes -8
+
+% Propagation options
+
+*max_advance 1.000000e-01
+*front_ini_length 5.000000e-01
+*nb_output_points 16
+*nb_cycles 10
+*fatigue_cycle 0.000000e+00 2.000000e+00
+*propag_model paris_std
+*fact_nc 1.000000e+00
+
+% Advanced options
+
+*elset_to_cut ALL_ELEMENT
+*nb_element_layers 3
+*constant_density 0.000000e+00
+*max_kink_angle 9.000000e+01
+*filtering 1.000000e-06
+*lip_fuse 1.000000e-05
+*normal_length 1.000000e-01
+*extern_step -1.000000e+00
+*max_fronts 128
+*max_quality 5.000000e+03
+*quality_threshold 0.000000e+00
+*power_func_coef 0.000000e+00
+*fuse_length -1.500000e+00

@@ -1,0 +1,105 @@
+%
+% Reassign the different part of the mesh to create the final geometries of the mesh (e.g. asthenosphere, lithosphere)
+%
+
+****mesher
+
+ ***mesh ./mesh_before_remeshing.geo
+  **open ./mesh_asthenospheres_disconnected.geo
+
+  % back to the original vertical scale
+  **scale 1. 1. 0.4
+
+  % ------------- CREATION OF LITHOSPHERES ------------------
+  **elset LITHO_OCEANIC_tmp2
+   *use_elset LITHO_OCEAN_step2 LITHO_OCEAN_tmp
+   *function  1.;
+
+  **elset LITHOSPHERE_OCEANIC
+   *use_elset LITHO_OCEANIC_tmp2
+   *function  (z > 0.9915240-1.e-4)*(z < 0.999372155+1.e-5);
+
+  **elset LITHOSPHERE_CONTINENTAL
+   *use_elset newCOMP-00-04 newCOMP-04-54 newCOMP-54-70 CL
+   *not_in_elsets LITHO_OCEANIC_tmp2
+
+
+  % ----------- CREATION OF ASTHENOSPHERES -----------------
+  **elset ASTHENO_OCEANIC_tmp2
+   *use_elset ASTHENO_OCEAN_step2 ASTHENO_OCEAN_tmp
+   *function  1.;
+
+  **elset ASTHENOSPHERE-70-200-OCEANIC
+   *use_elset ASTHENO_OCEANIC_tmp2
+   *function (z > 0.9686077-1.e-5);  %elements less deep than 200km
+
+  **elset ASTHENOSPHERE-200-270-OCEANIC
+    *use_elset ASTHENO_OCEANIC_tmp2
+    *function  (z < 0.9686077+1.e-5); %elements deeper than 200km
+
+  **elset ASTHENO_CONTINENTAL
+   *use_elset ASTHENO_tmp
+   *not_in_elsets ASTHENOSPHERE-70-200-OCEANIC ASTHENOSPHERE-200-270-OCEANIC
+
+  **elset ASTHENOSPHERE-70-200-CONTINENTAL
+   *use_elset ASTHENO_CONTINENTAL
+   *function  (z > 0.9686077 - 1.e-5);
+
+  **elset ASTHENOSPHERE-200-270-CONTINENTAL
+    *use_elset ASTHENO_CONTINENTAL
+    *function   (z < 0.9686077 + 1.e-5);
+
+
+
+
+
+  **elset LAYER-54-70-OCEANIC
+   *use_elset LITHO_OCEANIC_tmp2
+   *function  (z < 0.9915240+1.e-4);
+
+  **elset OCEAN2
+   *use_elset LITHO_OCEANIC_tmp2
+   *not_in_elsets LAYER-54-70-OCEANIC LITHOSPHERE_OCEANIC
+
+  **elset CH-0-70
+   *use_elset CH
+   *function (z > 0.9890127-1.e-4);
+
+  **elset CH-270-670
+   *use_elset CH
+   *not_in_elsets CH-0-70 CH-70-200 CH-200-270
+
+  **elset UPPER-MANTLE
+   *use_elset COMP-270-670
+   *function  1.;
+
+  **elset LOWER-MANTLE
+   *use_elset COMP-670-BOTTOM
+   *function  1.;
+
+  %%% ON SUPPRIME TOUT CE DONT ON A PLUS BESOIN
+  **remove_set
+   *elsets LITHO_CONNECTIVITY LITHO_SLICE newCOMP-00-04 newCOMP-04-54 newCOMP-54-70 COMP-70-200 COMP-200-270 CL COMP-270-670 COMP-670-BOTTOM
+   LITHO_OCEANIC_tmp2 LITHO_OCEAN_step2 LITHO_OCEAN_tmp LITHO_SLICE LITHO_CONTI_tmp LITHO_TO_DISCONNECT
+   ASTHENO_tmp ASTHENO_OCEANIC_tmp2 ASTHENO_OCEAN_step2 ASTHENO_OCEAN_tmp ASTHENO_TO_DISCONNECT ASTHENO_SLICE ASTHENO_CONTINENTAL
+
+   *nsets Chevauche-SLAB SLAB
+   *nsets_start_with surface
+   *bsets_start_with surface
+
+  %%%%% DEFINITION DU PLAN DE FAILLE %%%%%%
+
+  **extract_surface
+   *elset SLAB
+
+  **bset fault_plane
+   *use_bset surface_2
+   *function (z > 0.98508868 -1.e-4)*(z<0.999058232+ 1.e-5); ### 95km et 6km
+
+  %%% ON SUPPRIME TOUT CE DONT ON A PLUS BESOIN
+
+  **remove_set
+   *nsets_start_with surface
+   *bsets_start_with surface
+
+****return
