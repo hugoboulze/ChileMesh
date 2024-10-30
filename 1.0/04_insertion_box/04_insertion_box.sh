@@ -17,8 +17,8 @@ cd out/
 export PYTHONPATH=$PWD/../..:${PYTHONPATH}
 
 python3 insert_slab.py
-Zrun -m remplit
-Zrun -m remplit -N 2
+Zrun -m fill_volume.inp
+Zrun -m fill_volume.inp -N 2
 
 f=mesh-before-knife.geo
 if [ -s $f ]; then

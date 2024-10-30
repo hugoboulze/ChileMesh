@@ -13,15 +13,15 @@
 
   **delete_elset c3d4
 
-  **mesh_gems
+  **mesh_gems % extract outer skin...
    *min_size 0.0001
    *yams_only
 
-  **mesh_gems
+  **mesh_gems % ... then fill volume...
    *max_size 0.04
 ****return
 
-****mesher
+****mesher % ... finally reassign elset names and slab interface
  ***mesh mesh-before-knife.geo
   **open tmp1.geo
   **reassign_elsets

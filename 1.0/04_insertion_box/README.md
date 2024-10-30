@@ -11,5 +11,10 @@ Run the following script in the current directory:
 ## File details
 ---
 
-- `insert_slab.py` manual construction of a surface triangulation
-- `.py` manual construction of a surface triangulation
+- `insert_slab.py` manual construction of the surface's triangulation
+- `fill_volume.inp` fill and remesh the box
+
+## Notes
+
+The manual triangulation of the surface is straightforward in this case.
+If needed an automatic triangulation tool could be used, e.g. [CDT](https://github.com/artem-ogre/CDT).
