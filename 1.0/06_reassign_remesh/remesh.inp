@@ -31,6 +31,9 @@
     UPPER-MANTLE
     LOWER-MANTLE
     SLAB
+    SLAB-0-200
+    SLAB-200-270
+    SLAB-270-BOTTOM
     LAYER-54-70-OCEANIC
 
    *preserve_bsets

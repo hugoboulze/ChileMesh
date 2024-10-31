@@ -51,15 +51,19 @@
 
 
 
+  % ----------- CREATION OF OCEAN -----------------
+  **elset OCEAN_tmp
+    *use_elset LITHO_OCEANIC_tmp2
+    *function  (z > 0.999372155-1.e-5);
 
+  **elset OCEAN
+    *use_elset OC OCEAN_tmp
+    *function 1;
 
   **elset LAYER-54-70-OCEANIC
    *use_elset LITHO_OCEANIC_tmp2
    *function  (z < 0.9915240+1.e-4);
 
-  **elset OCEAN2
-   *use_elset LITHO_OCEANIC_tmp2
-   *not_in_elsets LAYER-54-70-OCEANIC LITHOSPHERE_OCEANIC
 
   **elset CH-0-70
    *use_elset CH
@@ -82,6 +86,7 @@
    *elsets LITHO_CONNECTIVITY LITHO_SLICE newCOMP-00-04 newCOMP-04-54 newCOMP-54-70 COMP-70-200 COMP-200-270 CL COMP-270-670 COMP-670-BOTTOM
    LITHO_OCEANIC_tmp2 LITHO_OCEAN_step2 LITHO_OCEAN_tmp LITHO_SLICE LITHO_CONTI_tmp LITHO_TO_DISCONNECT
    ASTHENO_tmp ASTHENO_OCEANIC_tmp2 ASTHENO_OCEAN_step2 ASTHENO_OCEAN_tmp ASTHENO_TO_DISCONNECT ASTHENO_SLICE ASTHENO_CONTINENTAL
+   OCEAN_tmp
 
    *nsets Chevauche-SLAB SLAB
    *nsets_start_with surface

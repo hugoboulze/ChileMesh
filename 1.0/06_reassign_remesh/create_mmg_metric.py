@@ -27,11 +27,11 @@ size = np.zeros(distance.shape)
 
 for i,d in enumerate(distance):
 
-    if d<= 0.04:
+    if d<= 0.02:
         size[i]= 0.005
-    if 0.04 < d <= 0.15:
+    if 0.02 < d <= 0.10:
         size[i]= 0.01
-    if 0.15 < d:
+    if 0.10 < d:
         size[i]= 0.04
 
 np.savetxt('metric_cvg.dat', np.hstack((m.nodes_coordinates(), size)), comments="", header="%d" %m.nb_nodes)
