@@ -1,5 +1,5 @@
 %
-% Insert a crack along the fault plane and duplicate nodes along the fault plane
+% Insert a crack along the fault plane and duplicate nodes along the fault plane: fault_plane_A and fault_plane_B
 %
 
 ****mesher
@@ -18,7 +18,6 @@
 
   **open_bset
     *bset fault_plane
-% Pour dedoubler les noeuds en surface :
     *surface bord_plan
 
   **cleanup_bsets
@@ -28,19 +27,19 @@
 
   **rename_set
    *bsets
-    SIDE1 Seisme_Subduction_Elargi
-    SIDE0 Seisme_Chile_Elargi
+    SIDE1 fault_plane_A_Elargi
+    SIDE0 fault_plane_B_Elargi
+  
+  **nset fault_plane_A_Elargi *use_bset fault_plane_A_Elargi *function 1. ;
+  **nset fault_plane_B_Elargi  *use_bset fault_plane_B_Elargi  *function 1. ;
+  
+  **nset fault_plane_A *use_nset fault_plane_A_Elargi *function 1. ;
+  **remove_nodes_from_nset *nset_name fault_plane_A *nsets_to_remove FRONT
+  **nset fault_plane_B  *use_nset fault_plane_B_Elargi  *function 1. ;
+  **remove_nodes_from_nset *nset_name fault_plane_B  *nsets_to_remove FRONT
 
-  **nset Seisme_Chile_Elargi  *use_bset Seisme_Chile_Elargi  *function 1. ;
-  **nset Seisme_Subduction_Elargi *use_bset Seisme_Subduction_Elargi *function 1. ;
-
-  **nset Seisme_Subduction *use_nset Seisme_Subduction_Elargi *function 1. ;
-  **remove_nodes_from_nset *nset_name Seisme_Subduction *nsets_to_remove FRONT
-  **nset Seisme_Chile  *use_nset Seisme_Chile_Elargi  *function 1. ;
-  **remove_nodes_from_nset *nset_name Seisme_Chile  *nsets_to_remove FRONT
-
-  **bset Seisme_Subduction *use_nset Seisme_Subduction
-  **bset Seisme_Chile  *use_nset Seisme_Chile
+  **bset fault_plane_A *use_nset fault_plane_A
+  **bset fault_plane_B  *use_nset fault_plane_B
 
 
   **remove_set
@@ -50,8 +49,8 @@
   **rename_set *bsets FRONT0 bord_fault_plane
 
 
-  **sort_nset *nset_name Seisme_Subduction *criterion (z1>z2) ;
-  **sort_nset *nset_name Seisme_Chile  *criterion (z1>z2) ;
+  **sort_nset *nset_name fault_plane_A *criterion (z1>z2) ;
+  **sort_nset *nset_name fault_plane_B  *criterion (z1>z2) ;
 
   %km to m
   **scale 1000.
