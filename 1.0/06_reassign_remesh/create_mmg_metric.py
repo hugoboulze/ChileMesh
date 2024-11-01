@@ -34,5 +34,5 @@ for i,d in enumerate(distance):
     if 0.10 < d:
         size[i]= 0.04
 
-np.savetxt('metric_cvg.dat', np.hstack((m.nodes_coordinates(), size)), comments="", header="%d" %m.nb_nodes)
+np.savetxt('metric_mmg.dat', np.hstack((m.nodes_coordinates(), size)), comments="", header="%d" %m.nb_nodes)
 #m.save('mesh-before-remeshing_cvg.geo')

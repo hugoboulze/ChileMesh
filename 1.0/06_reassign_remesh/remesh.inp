@@ -9,7 +9,7 @@
    *min_size .0005
    *max_size .05
    *verbose   6
-   *metric from_file file metric_cvg.dat
+   *metric from_file file metric_mmg.dat
    *volume_mesher mmg3d
     hgrad 1.25
     hausd 0.01
