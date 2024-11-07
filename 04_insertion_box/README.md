@@ -1,10 +1,15 @@
 # Module 4: Insertion Box
 
+
 Run the following script in the current directory:
 
 ```
 ./04_insertion_box.sh
 ```
+
+
+![alt text](04_insertion_box.png)
+
 
 ---
 

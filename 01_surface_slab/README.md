@@ -3,6 +3,9 @@
 Creation of point on the surface of the slab based on Slab2.0 (Hayes et al. 2018).
 The surface will be used to deform the slab in the **Module 3**.
 
+![alt text](step1.png)
+
+
 Run the following script in the current directory:
 
 ```
