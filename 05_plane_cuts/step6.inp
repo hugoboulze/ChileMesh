@@ -1,7 +1,7 @@
-
+%
 ****mesher
 
- ***mesh mesh-before-cut-NordSud.geo
+ ***mesh mesh_before_cut_north_south.geo
   **open mesh_knifed_04_54_70_200_270_670.geo
 
   **elset COMP-unassigned

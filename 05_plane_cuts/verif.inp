@@ -1,9 +1,10 @@
+%
 ****mesher
 
  ***mesh verif.geof
-  **open mesh_knifed_NordSud_04_54_70_200_270_670.geo
+  **open mesh_knifed_north_south_04_54_70_200_270_670.geo
 
-  **scale 1. 1. 3.   % pour se rapprocher d'un cube parfait
+  **scale 1. 1. 3.   % to be closer from a perfect cube
 
   **mesh_gems
    *optim_style -2

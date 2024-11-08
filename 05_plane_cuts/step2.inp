@@ -1,10 +1,11 @@
+%
 ****mesher
 
 % ***global_parameter
  %   Mesher.MeshFusion 1.e-3
 
  ***mesh mesh-before-knife1.geo
-  **open ../../04_insertion_box/out/mesh-before-knife.geo
+  **open ../../04_insertion_box/out/mesh_before_knife.geo
 
 %  **scale 1. 1. 2.5  %  scale was already done in previous step
 
@@ -43,11 +44,11 @@
    *nset suspect
    *ztrans 2.42152 ;
 
- ***mesh plans-200-270-670.geof
-  **open plan-200.geof
+ ***mesh planes_200_270_670.geof
+  **open plane_200.geof
   **union
-   *add plan-270.geof
+   *add plane_270.geof
   **union
-   *add plan-670.geof
+   *add plane_670.geof
 
 ****return

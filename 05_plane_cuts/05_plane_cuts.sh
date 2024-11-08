@@ -33,7 +33,7 @@ for i in $(seq 2 6); do
     Zrun -zp zcrack$i.z7p
 done
 
-f=mesh_knifed_NordSud_04_54_70_200_270_670.geo
+f=mesh_knifed_north_south_04_54_70_200_270_670.geo
 if [ -s $f ]; then
     echo -e '\n ***END Knives module***'
 else

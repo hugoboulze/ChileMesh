@@ -20,7 +20,7 @@ assert a == b+c+d, "ALL is not equal to CUT_ME + SLAB + AW"
 
 # check cut planes are scaled properly:
 zcoords = before.nodes_coordinates()[:,2]
-zplanes = Mesh('plans-200-270.geof').nodes_coordinates()[:,2]
+zplanes = Mesh('planes_200_270.geof').nodes_coordinates()[:,2]
 
 assert np.min(zcoords) < np.min(zplanes), "Cut plane is below the box ?!"
 assert np.max(zcoords) > np.max(zplanes), "Cut plane is above the box ?!"

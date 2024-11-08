@@ -5,9 +5,9 @@
 % General options
 
 *editor gedit
-*sane_name mesh-before-cut-NordSud
+*sane_name mesh_before_cut_north_south
 *crack_name crack
-*cracked_name mesh_knifed_NordSud_04_54_70_200_270_670
+*cracked_name mesh_knifed_north_south_04_54_70_200_270_670
 *gradation 1.300000e+00
 *min_size 5.000000e-03
 *max_size 1.000000e-01
@@ -26,7 +26,7 @@
 *crack_center 0.000000e+00 0.000000e+00 8.500000e-01
 *crack_normal 0.000000e+00 0.000000e+00 1.000000e+00
 *crack_radius 3.000000e+01
-*crack_surface_from_file plans-nord-sud.geof
+*crack_surface_from_file planes_north_south.geof
 
 % Insertion options
 

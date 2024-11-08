@@ -1,11 +1,11 @@
-
+%
 ****mesher
 
  ***mesh mesh-before-knife4.geo
   **open mesh_knifed_54_70_200_270_670.geo
 
-% grep '^3' plan-*geof  | cut -d ' ' -f 1,4
-% plan-04.geof:3 2.49843
+% grep '^3' plane_*geof  | cut -d ' ' -f 1,4
+% plane_04.geof:3 2.49843
 
   **extract_surface *elset SLAB *ridges_only  % super important, spurious points in nset otherwise (easily spotted in Zpv)
   **nset P4

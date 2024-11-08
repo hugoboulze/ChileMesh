@@ -18,7 +18,7 @@ from constants import z400km
 # =============================================================================
 
 
-m = zset.Mesh('mesh-before-cut-NordSud.geo')
+m = zset.Mesh('mesh_before_cut_North_South.geo')
 
 m.transform("**nset SLAB *use_elset SLAB *function 1.;")
 
@@ -45,14 +45,14 @@ m.transform(f"**function *nset EDGE_NORTH *xtrans {c1[0]}; *ytrans {c1[1]}; ")
 
 tmpl = open("north_south_planes.geof.tmpl").read()
 tmpl2 = tmpl.format(c00=c0[0], c01=c0[1], c10=c1[0], c11=c1[1], zmin=z400km*2.5)
-open("plans-nord-sud.geof", 'w').write(tmpl2)
-print("Wrote plans-nord-sud.geof")
+open("planes_north_south.geof", 'w').write(tmpl2)
+print("Wrote planes_north_south.geof")
 print("Please check above that EDGE_NORTH and EDGE_SOUTH have a few (6) nodes.")
 
 
 m.transform("**check_quality")
 
-m.save('mesh-before-cut-NordSud.geo')
+m.save('mesh_before_cut_North_South.geo')
 
 assert len(m.nsets['EDGE_SOUTH']) >2 and len(m.nsets['EDGE_SOUTH']) <10, "EDGE_SOUTH is expected to have ~6 nodes, not %d. Check the mesh!"%len(m.nsets['EDGE_SOUTH'])
 assert len(m.nsets['EDGE_NORTH']) >2 and len(m.nsets['EDGE_NORTH']) <10, "EDGE_NORTH is expected to have ~6 nodes, not %d. Check the mesh!"%len(m.nsets['EDGE_NORTH'])

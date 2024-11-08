@@ -1,4 +1,4 @@
-
+%
 ****mesher
 
 % ***global_parameter
@@ -6,12 +6,12 @@
  ***mesh mesh-before-knife54.geo
   **open mesh_knifed_70_200_270_670.geo
 
-% [jdgaraud@spiro-v206-clu zcracks2_knifes]$ grep '^3' plan-*geof  | cut -d ' ' -f 1,4
-% plan-04.geof:3 2.49843
-% plan-200.geof:3 2.4215195
-% plan-270.geof:3 2.394050000000000e+00
-% plan-54.geof:3 2.478810000000000e+00
-% plan-70.geof:3 2.472531750000000e+00
+% [jdgaraud@spiro-v206-clu zcracks2_knifes]$ grep '^3' plane_*geof  | cut -d ' ' -f 1,4
+% plane_04.geof:3 2.49843
+% plane_200.geof:3 2.4215195
+% plane_270.geof:3 2.394050000000000e+00
+% plane_54.geof:3 2.478810000000000e+00
+% plane_70.geof:3 2.472531750000000e+00
 
 
   %% 2.47881 c'est 54km quand z*=2.5

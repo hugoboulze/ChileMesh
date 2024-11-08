@@ -39,26 +39,26 @@ ymin -= .02
 xmax += .02
 ymax += .02
 
-with open("plan-04.geof", 'w') as geof:
+with open("plane_04.geof", 'w') as geof:
     z = 0.999372 * scale # idem
     geof.write(tmpl.format(**locals()))
 
-with open("plan-70.geof", 'w') as geof:
+with open("plane_70.geof", 'w') as geof:
     z = 0.9890127 * scale  # z70km , mais avec l'arrondi de arrondis.inp
     geof.write(tmpl.format(**locals()))
 
-with open("plan-54.geof", 'w') as geof:
+with open("plane_54.geof", 'w') as geof:
     z = 0.9915240 * scale  # z54km , mais avec l'arrondi de arrondis.inp
     geof.write(tmpl.format(**locals()))
 
-with open("plan-200.geof", 'w') as geof:
+with open("plane_200.geof", 'w') as geof:
     z = 0.9686078 * scale  # idem
     geof.write(tmpl.format(**locals()))
 
-with open("plan-270.geof", 'w') as geof:
+with open("plane_270.geof", 'w') as geof:
     z = 0.957620 * scale  # idem
     geof.write(tmpl.format(**locals()))
 
-with open("plan-670.geof", 'w') as geof:
+with open("plane_670.geof", 'w') as geof:
     z = z670km * scale  # idem
     geof.write(tmpl.format(**locals()))

@@ -26,7 +26,7 @@
 *crack_center 0.000000e+00 0.000000e+00 8.500000e-01
 *crack_normal 0.000000e+00 0.000000e+00 1.000000e+00
 *crack_radius 3.000000e+01
-*crack_surface_from_file plan-04.geof
+*crack_surface_from_file plane_04.geof
 
 % Insertion options
 
