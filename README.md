@@ -28,7 +28,7 @@ mettre abstract papier pour comprendre dans quel objectif est fait ce maillage
 
 [**STEP 5**](05_plane_cuts/README.md): The planes at a given depth (e.g. -70km, -200km) are created by knifing the mesh.
 
-[**STEP 6**](06_reassign_remesh/README.md): The elset (e.g. LITHOSPHERE, ASTHENOSPHERE) are finally created. The mesh is refined.
+[**STEP 6**](06_reassign_remesh/README.md): The elsets (e.g. LITHOSPHERE, ASTHENOSPHERE) are finally created. The mesh is refined.
 
 
 

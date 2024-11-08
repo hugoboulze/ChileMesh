@@ -38,23 +38,23 @@ check_zcracks_version() {
 import os.path
 import zset
 v = int(zset.version.svn_revision)
-f = '06_make_horizontal_and_vertical_cuts/Zcracks_base.z7p'
-if v >= 23097 and os.path.exists(f):
-  print('Warning:', f, 'should not be necessary with your recent version of Zset.')
+if v < 23097:
+  exit(1)
 EOF
 }
 echo "** Zcracks's version"
-check_zcracks_version
+check_zcracks_version && { zcracks=ok; } || { zcracks="ko (version<23097)"; }
 
 
 cat <<EOF
 
 ** Summary **
-gmt    is $gmt
-python is $py
-Zset   is $z
-Zpy    is $zpy
-Zmmg   is $zmmg
+gmt     is $gmt
+python  is $py
+Zset    is $z
+Zpy     is $zpy
+Zcracks is $zcracks
+Zmmg    is $zmmg
 EOF
 
 
