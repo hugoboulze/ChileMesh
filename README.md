@@ -1,4 +1,4 @@
-# **A finite-element mesh of the Chilean subduction zone**
+# <img src="step_6_b.png" alt="description" style="width:10%;"> **A finite-element mesh of the Chilean subduction zone**
 
 Hugo Boulze (1), Jean-Didier Garaud (2), Luce Fleitout (1), Emilie Klein (1), Vincent Chiaruttini (2) and Christophe Vigny (1)
 
@@ -8,7 +8,7 @@ Hugo Boulze (1), Jean-Didier Garaud (2), Luce Fleitout (1), Emilie Klein (1), Vi
 Contacts: boulze@geologie.ens.fr, jean-didier.garaud@onera.fr
 
 How to cite :
-Please, when using mesh-Chile_v1.0 cite *xxx*
+Please, when using chile-mesh_v1.0 or any content from this work cite *xxx*
 
 #### **Abstract**
 
@@ -30,7 +30,7 @@ mettre abstract papier pour comprendre dans quel objectif est fait ce maillage
 
 [**STEP 6**](06_reassign_remesh/README.md): The elsets (e.g. LITHOSPHERE, ASTHENOSPHERE) are finally created. The mesh is refined.
 
-
+ <img src="./assets/pipeline.png" alt="description" style="width:100%;">
 
 ##  **Prerequisites**
 
