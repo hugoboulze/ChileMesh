@@ -1,4 +1,4 @@
-# <img src="step_6_b.png" alt="description" style="width:10%;"> **A finite-element mesh of the Chilean subduction zone**
+# <img src="./assets/mesh.png" alt="description" style="width:40%;"> **A finite-element mesh of the Chilean subduction zone**
 
 Hugo Boulze (1), Jean-Didier Garaud (2), Luce Fleitout (1), Emilie Klein (1), Vincent Chiaruttini (2) and Christophe Vigny (1)
 
