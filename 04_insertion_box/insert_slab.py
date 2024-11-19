@@ -44,6 +44,8 @@ corners[:,1] += ymin
 corners[:,2] *= (zmax - zmin)
 corners[:,2] += zmin
 
+
+# here this scale by 2.5 mimics an anisotropic metric in the remeshing later on
 corners[:,2] *= 2.5  # scale by 2.5
 box.add_nodes(corners)
 
