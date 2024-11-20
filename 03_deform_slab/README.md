@@ -2,6 +2,9 @@
 
 Creation of the subduction interface. First the 2D slice of the interface is drawn. Then, it is extended along the path of the subduction trench.
 
+<p align="center">
+ <img src="../assets/test.gif" alt="description" style="width:50%;">
+</p>
 
 Run the following script in the current directory:
 
