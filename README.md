@@ -1,24 +1,28 @@
-# <img src="./assets/mesh.png" alt="description" style="width:40%;"> **A finite-element mesh of the Chilean subduction zone**
+# <img src="./assets/mesh.png" alt="description" style="width:20%;"> **A finite-element mesh of the Chilean subduction zone**
 
-Hugo Boulze (1), Jean-Didier Garaud (2), Luce Fleitout (1), Emilie Klein (1), Vincent Chiaruttini (2) and Christophe Vigny (1)
+##### Hugo Boulze<sup>1</sup>, Jean-Didier Garaud<sup>2</sup>, Luce Fleitout<sup>1</sup>, Emilie Klein<sup>1</sup>, Vincent Chiaruttini<sup>2</sup> and Christophe Vigny<sup>1</sup>
 
-(1) Laboratoire de Géologie, CNRS - Ecole normale supérieure - PSL University, Paris, France
-(2) ONERA - The French Aerospace Lab, F-92322 Châtillon, France
+*<sup>1</sup> Laboratoire de Géologie, CNRS - Ecole normale supérieure - PSL University, Paris, France*
 
-Contacts: boulze@geologie.ens.fr, jean-didier.garaud@onera.fr
+*<sup>2</sup> ONERA - The French Aerospace Lab, F-92322 Châtillon, France*
 
-How to cite :
-Please, when using chile-mesh_v1.0 or any content from this work cite *xxx*
-
-#### **Abstract**
-
-mettre abstract papier pour comprendre dans quel objectif est fait ce maillage
+<u>**Contacts**</u> : [boulze@geologie.ens.fr](mailto:boulze@geologie.ens.fr), [jean-didier.garaud@onera.fr](mailto:jean-didier.garaud@onera.fr)
 
 
-## **Mesh construction**
+<u>**How to cite**</u> :
+Please, when using *chile-mesh_v1.0* or any content from this work cite *xxx*
 
 
-[**STEP 1**](01_surface_slab/README.md): Creation of the surface of the slab based on Slab2.0.
+
+### **Paper abstract**
+
+copy/paste the paper abstract here.
+
+
+### **Mesh construction**
+
+
+[**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon,lat,depth) of surface of the slab based on Slab2.0.
 
 [**STEP 2**](02_slab_2D_to_3D/README.md): Creation of the subduction interface. First the 2D slice of the interface is drawn. Then, it is extended to 3D along the path of the subduction trench.
 
@@ -32,7 +36,7 @@ mettre abstract papier pour comprendre dans quel objectif est fait ce maillage
 
  <img src="./assets/pipeline.png" alt="description" style="width:100%;">
 
-##  **Prerequisites**
+###  **Prerequisites**
 
 The script `check_prerequisites.sh` verifies some software prerequisites.
 

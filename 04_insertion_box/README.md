@@ -1,5 +1,6 @@
 # Module 4: Insertion Box
 
+Insertion of the subduction in the bounding-box.
 
 Run the following script in the current directory:
 
@@ -7,17 +8,13 @@ Run the following script in the current directory:
 ./04_insertion_box.sh
 ```
 
-
-![alt text](04_insertion_box.png)
-
-
 ---
 
 ## File details
 ---
 
-- `insert_slab.py` manual construction of the surface's triangulation
-- `fill_volume.inp` fill and remesh the box
+- [`insert_slab.py`](insert_slab.py): Manual construction of the surface's triangulation
+- [`fill_volume.inp`](fill_volume.inp): Fill and remesh the box
 
 ## Notes
 
