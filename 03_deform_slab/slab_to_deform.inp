@@ -25,7 +25,7 @@
 
  ***material
 
-  **elset AW-ext     *this_file 1
+  **elset AP-ext     *this_file 1
   **elset SLAB-ext   *this_file 1
   **elset CH-ext    *this_file 1
   **elset OC-ext    *this_file 1

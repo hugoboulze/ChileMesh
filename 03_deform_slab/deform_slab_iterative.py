@@ -144,8 +144,8 @@ for j, disp in enumerate(disp_list):
     bad_slab = zset.Mesh(DIR+'slab_tmp2.geof')
 
 bad_slab.transform('**classical_renumbering')
-bad_slab.transform('**rename_set *elsets  AW-ext AW  SLAB-ext   SLAB  CH-ext  CH  CL-ext CL  OC-ext OC')
-#bad_slab.elsets['AW-ext'].name = 'AW'
+bad_slab.transform('**rename_set *elsets  AP-ext AP  SLAB-ext   SLAB  CH-ext  CH  CL-ext CL  OC-ext OC')
+#bad_slab.elsets['AP-ext'].name = 'AP'
 bad_slab.save(DIR+'slab_deformed_FLAT.geof')
 bad_slab.transform('**RThetaPhi_to_XYZ')
 bad_slab.save(DIR+'slab_deformed_SPHE.geof')

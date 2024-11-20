@@ -13,9 +13,9 @@ a = len(before.elsets['ALL'])
 b = len(before.elsets['CUT_ME'])
 b = len(before.elsets['CUT_ME'])
 c = len(before.elsets['SLAB'])
-d = len(before.elsets['AW'])
+d = len(before.elsets['AP'])
 
-assert a == b+c+d, "ALL is not equal to CUT_ME + SLAB + AW"
+assert a == b+c+d, "ALL is not equal to CUT_ME + SLAB + AP"
 
 
 # check cut planes are scaled properly:
@@ -43,8 +43,8 @@ pb2.initialize()
 vol1 = functools.partial(vol, pb=pb1)
 vol2 = functools.partial(vol, pb=pb2)
 
-print(vol1('SLAB'), vol1('AW'), vol1('CH'), vol1('COMP'))
-print(vol2('SLAB'), vol2('AW'), vol2('CH'), vol2('COMP'))
+print(vol1('SLAB'), vol1('AP'), vol1('CH'), vol1('COMP'))
+print(vol2('SLAB'), vol2('AP'), vol2('CH'), vol2('COMP'))
 
 #TODO:could assert
 # - that |vol1-vol2| < epsilon(1.e-4) ?

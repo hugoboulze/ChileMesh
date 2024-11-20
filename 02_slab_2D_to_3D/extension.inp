@@ -40,7 +40,7 @@
   **extension_along_nset_improved
    *nset_to_follow zzChileanFault
    *elset_names
-    AW SLAB CH CL OC
+    AP SLAB CH CL OC
    *surface_function (x^2+y^2+z^2);
 
   **remove_set

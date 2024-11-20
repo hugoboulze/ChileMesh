@@ -11,7 +11,7 @@
    *volume_mesher mmg3d
     hgrad 1.25   % 2 elements voisins sont a ce % pres pareil
     hausd 0.01   % pilote le raffinement de zones a forte courbure
-   *preserve_elsets AW-ext SLAB-ext CH-ext CL-ext OC-ext
+   *preserve_elsets AP-ext SLAB-ext CH-ext CL-ext OC-ext
    *preserve_bsets
 
     left-ext

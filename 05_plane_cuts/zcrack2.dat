@@ -30,7 +30,7 @@
 
 % Insertion options
 
-*elset_names AW SLAB CH CL COMP OCEAN
+*elset_names AP SLAB CH CL COMP OCEAN
 *faset_names CL-surf
 *elset_radius 2.000000e+00
 *frozen_elset

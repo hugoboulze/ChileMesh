@@ -40,7 +40,7 @@
    *min_size 0.001
 %   *mesh_cleaner
    *preserve_elset3d
-     AW-ext SLAB-ext CH-ext CL-ext OC-ext
+     AP-ext SLAB-ext CH-ext CL-ext OC-ext
 
    *preserve_liset Px0y8-ext Px-50y-54-ext coast-ext corner_aw-ext
 
@@ -74,7 +74,7 @@
    *nb_iter_vol 2
    *nb_iter_surf 4
    *max_size 0.01
-   *preserve_elset3d AW-ext SLAB-ext CH-ext CL-ext OC-ext
+   *preserve_elset3d AP-ext SLAB-ext CH-ext CL-ext OC-ext
    *preserve_liset Px0y8-ext Px-50y-54-ext coast-ext corner_aw-ext
    *preserve_faset
     left-ext

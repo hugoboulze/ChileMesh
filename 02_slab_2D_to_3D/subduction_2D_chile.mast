@@ -200,7 +200,7 @@
   *b line2 line16 line12 line8 line9 line27 line70 
  **domain delaunay2D Free4
   *element c2d3
-  *name AW
+  *name AP
   *extras 2.900000000000000e+01 1.000000000000000e-09
   *b line36 line32 line37 
  **domain delaunay2D Free6

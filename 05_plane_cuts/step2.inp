@@ -21,7 +21,7 @@
   **rename_set
    *elsets OC OCEAN
 
-% possible verification : CUT_ME + SLAB + AW == ALL
+% possible verification : CUT_ME + SLAB + AP == ALL
 
   **rename_set
    *bsets INTERFACE_MICRO CL-surf   %% todo, c'est plutot une SLAB-surf

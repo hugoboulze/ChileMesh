@@ -39,7 +39,7 @@ def xyz_to_grid(raw_slab):
 
     '''
 
-    raw_slab = np.genfromtxt('./sam_slab2_dep_02.23.18.xyz', delimiter=',', dtype=float)
+    raw_slab = np.genfromtxt(raw_slab, delimiter=',', dtype=float)
 
     depth_grid = raw_slab[:,2]
     depth_grid = np.reshape(depth_grid , (1281,581))

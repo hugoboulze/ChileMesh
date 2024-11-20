@@ -9,7 +9,7 @@
   **elset_by_element_type
 
   **remesh_elset_skin
-   *elset AW SLAB CH CL OC
+   *elset AP SLAB CH CL OC
 
   **delete_elset c3d4
 
@@ -26,14 +26,14 @@
   **open tmp1.geo
   **reassign_elsets
    *mesh slab.geo
-   *elsets  AW SLAB CH CL OC
+   *elsets  AP SLAB CH CL OC
 
   **remove_set
    *elsets ALL_ELEMENT ELSET0 ELSET1 ELSET2 ELSET3 ELSET4 ELSET5 c3d4
 
 
 % now, to finish as in the auto-insertion
-  **elset MICRO *add_elset AW SLAB CH CL OC
+  **elset MICRO *add_elset AP SLAB CH CL OC
 % lines copied from ZCRACKS_MESHER.inp
   **remove_set *bsets INTERFACE_MICRO INTERFACE_MICRO0 SURFACE
   **unshared_faces SURFACE **unshared_faces INTERFACE_MICRO0 *elsets MICRO
