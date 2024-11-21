@@ -1,10 +1,15 @@
 # Module 5: Plane Cuts
 
 Cut the mesh with:
-  - horizontal planes: -4km, -54km, -70km, -200km, -270km, -670k
-  - north and south vertical planes
+  - Horizontal planes: -4km, -54km, -70km, -200km, -270km, -670km
+  - Vertical planes: North and South of the subduction zone
 
 Planes are inserted using Z-cracks module.
+
+<p align="center">
+ <img src="../assets/step5.gif" alt="description" style="width:50%;">
+</p>
+
 
 Run the following script in the current directory:
 

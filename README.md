@@ -14,12 +14,12 @@ Please, when using *chile-mesh_v1.0* or any content from this work cite *xxx*
 
 
 
-### **Paper abstract**
+## **Paper abstract**
 
 copy/paste the paper abstract here.
 
 
-### **Mesh construction**
+## **Mesh construction**
 
 
 [**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon,lat,depth) of surface of the slab based on Slab2.0.
@@ -36,7 +36,7 @@ copy/paste the paper abstract here.
 
  <img src="./assets/pipeline.png" alt="description" style="width:100%;">
 
-###  **Prerequisites**
+##  **Prerequisites**
 
 The script `check_prerequisites.sh` verifies some software prerequisites.
 

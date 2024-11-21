@@ -2,6 +2,11 @@
 
 Insertion of the subduction in the bounding-box.
 
+<p align="center">
+ <img src="../assets/step4.gif" alt="description" style="width:50%;">
+</p>
+
+
 Run the following script in the current directory:
 
 ```
