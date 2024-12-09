@@ -17,12 +17,19 @@ Please, when using *chile-mesh_v1.0* or any content from this work cite *xxx*
 </p>
 
 
-## **Paper abstract**
-
-copy/paste the paper abstract here.
 
 
-## **Mesh construction**
+## Geophysical zones included in *chile-mesh_v1.0*
+
+<p align="center">
+<img src="./assets/zone_names.png" alt="description" style="width:70%;">
+</p>
+
+2D-sketch representing the geophysical zones included in chile-mesh_v1.0. CH: channel. AP: Accretionary prism. The fault-plane
+extends from -6 km to -70 km depth. The node-split technique of the fault-plane (Melosh et Raefsky, 1981) gives two groups of nodes: fault plane A and fault plane B, respectively oriented the Earth center and toward the surface. Depth of zones is indicated as an italic number.
+
+
+## Mesh construction
 
 
 [**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon,lat,depth) of surface of the slab based on Slab2.0.
@@ -39,7 +46,7 @@ copy/paste the paper abstract here.
 
  <img src="./assets/pipeline.png" alt="description" style="width:100%;">
 
-##  **Prerequisites**
+##  Prerequisites
 
 The script `check_prerequisites.sh` verifies some software prerequisites.
 

@@ -15,11 +15,11 @@
    *use_elset LITHO_OCEAN_step2 LITHO_OCEAN_tmp
    *function  1.;
 
-  **elset LITHOSPHERE_OCEANIC
+  **elset LITHOSPHERE-OCEANIC
    *use_elset LITHO_OCEANIC_tmp2
    *function  (z > 0.9915240-1.e-4)*(z < 0.999372155+1.e-5);
 
-  **elset LITHOSPHERE_CONTINENTAL
+  **elset LITHOSPHERE-CONTINENTAL
    *use_elset newCOMP-00-04 newCOMP-04-54 newCOMP-54-70 CL
    *not_in_elsets LITHO_OCEANIC_tmp2
 
@@ -29,11 +29,11 @@
    *use_elset ASTHENO_OCEAN_step2 ASTHENO_OCEAN_tmp
    *function  1.;
 
-  **elset ASTHENOSPHERE-1-OCEANIC
+  **elset ASTHENOSPHERE-70-200-OCEANIC
    *use_elset ASTHENO_OCEANIC_tmp2
    *function (z > 0.9686077-1.e-5);  %elements less deep than 200km
 
-  **elset ASTHENOSPHERE-2-OCEANIC
+  **elset ASTHENOSPHERE-200-270-OCEANIC
     *use_elset ASTHENO_OCEANIC_tmp2
     *function  (z < 0.9686077+1.e-5); %elements deeper than 200km
 
@@ -41,11 +41,11 @@
    *use_elset ASTHENO_tmp
    *not_in_elsets ASTHENOSPHERE-70-200-OCEANIC ASTHENOSPHERE-200-270-OCEANIC
 
-  **elset ASTHENOSPHERE-1-CONTINENTAL
+  **elset ASTHENOSPHERE-70-200-CONTINENTAL
    *use_elset ASTHENO_CONTINENTAL
    *function  (z > 0.9686077 - 1.e-5);
 
-  **elset ASTHENOSPHERE-2-CONTINENTAL
+  **elset ASTHENOSPHERE-200-270-CONTINENTAL
     *use_elset ASTHENO_CONTINENTAL
     *function   (z < 0.9686077 + 1.e-5);
 
