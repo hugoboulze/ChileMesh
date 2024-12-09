@@ -1,6 +1,6 @@
 # Module 3: Deform Slab
 
-Creation of the subduction interface. First the 2D slice of the interface is drawn. Then, it is extended along the path of the subduction trench.
+Projection of the slab on the topography described by Slab2.0 (Hayes et al. 2018).
 
 <p align="center">
  <img src="../assets/step3.gif" alt="description" style="width:50%;">

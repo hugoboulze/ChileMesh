@@ -1,10 +1,10 @@
-# <img src="./assets/mesh.png" alt="description" style="width:20%;"> **A finite-element mesh of the Chilean subduction zone**
+# A 3D finite-element mesh of the Chilean subduction zone, including flat-slabs, for viscoelastic deformation modeling
 
 #### Hugo Boulze<sup>1</sup>, Jean-Didier Garaud<sup>2</sup>, Luce Fleitout<sup>1</sup>, Emilie Klein<sup>1</sup>, Vincent Chiaruttini<sup>2</sup> and Christophe Vigny<sup>1</sup>
 
 *<sup>1</sup> Laboratoire de Géologie, CNRS - Ecole normale supérieure - PSL University, Paris, France*
 
-*<sup>2</sup> ONERA - The French Aerospace Lab, F-92322 Châtillon, France*
+*<sup>2</sup> DMAS, ONERA, Université Paris-Saclay, 92320, Châtillon, France*
 
 <u>**Contacts**</u> : [boulze@geologie.ens.fr](mailto:boulze@geologie.ens.fr), [jean-didier.garaud@onera.fr](mailto:jean-didier.garaud@onera.fr)
 
@@ -12,6 +12,9 @@
 <u>**How to cite**</u> :
 Please, when using *chile-mesh_v1.0* or any content from this work cite *xxx*
 
+<p align="center">
+<img src="./assets/mesh.png" alt="description" style="width:70%;">
+</p>
 
 
 ## **Paper abstract**
