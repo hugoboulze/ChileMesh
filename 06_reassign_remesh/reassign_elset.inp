@@ -73,7 +73,7 @@
    *use_elset CH
    *not_in_elsets CH-0-70 CH-70-200 CH-200-270
 
-  **elset UPPER-MANTLE
+  **elset DEEP-UPPER-MANTLE
    *use_elset COMP-270-670
    *function  1.;
 
