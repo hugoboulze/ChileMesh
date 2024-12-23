@@ -22,7 +22,7 @@
 ****return
 
 ****mesher % ... finally reassign elset names and slab interface
- ***mesh mesh-before-knife.geo
+ ***mesh mesh_before_knife.geo
   **open tmp1.geo
   **reassign_elsets
    *mesh slab.geo

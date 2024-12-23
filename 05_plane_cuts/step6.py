@@ -18,7 +18,7 @@ from constants import z400km
 # =============================================================================
 
 
-m = zset.Mesh('mesh_before_cut_North_South.geo')
+m = zset.Mesh('mesh_before_cut_north_south.geo')
 
 m.transform("**nset SLAB *use_elset SLAB *function 1.;")
 
@@ -52,7 +52,7 @@ print("Please check above that EDGE_NORTH and EDGE_SOUTH have a few (6) nodes.")
 
 m.transform("**check_quality")
 
-m.save('mesh_before_cut_North_South.geo')
+m.save('mesh_before_cut_north_south.geo')
 
 assert len(m.nsets['EDGE_SOUTH']) >2 and len(m.nsets['EDGE_SOUTH']) <10, "EDGE_SOUTH is expected to have ~6 nodes, not %d. Check the mesh!"%len(m.nsets['EDGE_SOUTH'])
 assert len(m.nsets['EDGE_NORTH']) >2 and len(m.nsets['EDGE_NORTH']) <10, "EDGE_NORTH is expected to have ~6 nodes, not %d. Check the mesh!"%len(m.nsets['EDGE_NORTH'])

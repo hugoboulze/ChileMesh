@@ -20,7 +20,7 @@ python3 insert_slab.py
 Zrun -m fill_volume.inp
 Zrun -m fill_volume.inp -N 2
 
-f=mesh-before-knife.geo
+f=mesh_before_knife.geo
 if [ -s $f ]; then
     echo -e '\n ***END***'
 else
