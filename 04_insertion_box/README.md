@@ -24,4 +24,4 @@ Run the following script in the current directory:
 ## Notes
 
 The manual triangulation of the surface is straightforward in this case.
-If needed an automatic triangulation tool could be used, e.g. [CDT](https://github.com/artem-ogre/CDT).
+If needed, an automatic triangulation tool could be used, e.g. [CDT](https://github.com/artem-ogre/CDT).

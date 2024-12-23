@@ -2,7 +2,8 @@
 
 Creation of a subduction interface. First the 2D slice of the interface is drawn. Then, it is extended along the path of the subduction trench.
 
-This mesh of the subducting plate has a constant dip angle. It will be projected on the real Chilean slab in **Module 3**.
+At this stage, the mesh of the subducting plate has a constant dip angle.
+It will be projected on the real Chilean slab in **Module 3**.
 
 Run the following script in the current directory:
 

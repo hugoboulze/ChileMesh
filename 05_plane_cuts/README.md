@@ -4,7 +4,7 @@ Cut the mesh with:
   - Horizontal planes: -4km, -54km, -70km, -200km, -270km, -670km
   - Vertical planes: North and South of the subduction zone
 
-Planes are inserted using Z-cracks module.
+Planes are inserted using Z-cracks.
 
 <p align="center">
  <img src="../assets/step5.gif" alt="description" style="width:50%;">

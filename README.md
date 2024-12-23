@@ -26,13 +26,13 @@ Please, when using *chile-mesh_v1.0* or any content from this work cite *xxx*
 </p>
 
 2D-sketch representing the geophysical zones included in chile-mesh_v1.0. CH: channel. AP: Accretionary prism. The fault-plane
-extends from -6 km to -70 km depth. The node-split technique of the fault-plane (Melosh et Raefsky, 1981) gives two groups of nodes: fault plane A and fault plane B, respectively oriented the Earth center and toward the surface. Depth of zones is indicated as an italic number.
+extends from -6 km to -70 km depth. The node-split technique of the fault-plane (Melosh et Raefsky, 1981) gives two groups of nodes: fault plane A and fault plane B, respectively oriented towards the Earth center and towards the surface. Depth of zones is indicated as an italic number.
 
 
 ## Mesh construction
 
 
-[**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon,lat,depth) of surface of the slab based on Slab2.0.
+[**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon, lat, depth) of surface of the slab based on Slab2.0.
 
 [**STEP 2**](02_slab_2D_to_3D/README.md): Creation of the subduction interface. First the 2D slice of the interface is drawn. Then, it is extended to 3D along the path of the subduction trench.
 
@@ -52,5 +52,5 @@ The script `check_prerequisites.sh` verifies some software prerequisites.
 
 The pipeline works successfully with:
 - [Zset](http://zset-software.com/), using a development version svn:23164.
-- [GMT](https://docs.generic-mapping-tools.org/latest/index.html), version 6.3.0
-- [MMG](http://www.mmgtools.org/), version 5.7.3
+- [GMT](https://docs.generic-mapping-tools.org/latest/index.html), version 6.3.0.
+- [MMG](http://www.mmgtools.org/), version 5.7.3.
