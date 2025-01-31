@@ -5,12 +5,13 @@
 ****mesher
 
  ***mesh 
-  **dont_save_final_mesh
+%  **dont_save_final_mesh
   **open chile-mesh_v1.0.geo
 
 %% TODO: check why msh and mesh export don't work
   %**export gmsh   chile-mesh-1.0.msh
   %**export mesh   chile-mesh-1.0.mesh   % INRIA .mesh format
+
   **export abaqus chile-mesh-1.0.inp
 
 ****return

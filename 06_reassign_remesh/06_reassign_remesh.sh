@@ -24,7 +24,7 @@ Zrun -m create_boundaries_and_remove_ocean.inp
 Zrun -m duplicate_nodes_interface.inp
 Zrun -m export.inp
 
-f=mesh-Chile_v1.0.geo
+f=chile-mesh_v1.0.geo
 if [ -s $f ]; then
     echo -e '\n ***END***'
 else
