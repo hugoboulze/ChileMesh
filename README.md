@@ -1,24 +1,22 @@
 # A 3D finite-element mesh of the Chilean subduction zone, including flat-slabs, for viscoelastic deformation modeling
 
-#### Hugo Boulze<sup>1</sup>, Jean-Didier Garaud<sup>2</sup>, Luce Fleitout<sup>1</sup>, Emilie Klein<sup>1</sup>, Vincent Chiaruttini<sup>2</sup> and Christophe Vigny<sup>1</sup>
+#### Hugo Boulze<sup>1</sup>, Jean-Didier Garaud<sup>2</sup>, Emilie Klein<sup>1</sup>, Luce Fleitout<sup>1</sup>, Christophe Vigny<sup>1</sup> and Vincent Chiaruttini<sup>2</sup>
 
 *<sup>1</sup> Laboratoire de Géologie, CNRS - Ecole normale supérieure - PSL University, Paris, France*
 
 *<sup>2</sup> DMAS, ONERA, Université Paris-Saclay, 92320, Châtillon, France*
+
+<p align="center">
+<img src="./assets/mesh.png" alt="description" style="width:70%;">
+</p>
 
 <u>**Contacts**</u> : [boulze@geologie.ens.fr](mailto:boulze@geologie.ens.fr), [jean-didier.garaud@onera.fr](mailto:jean-didier.garaud@onera.fr)
 
 <u>**How to cite**</u> :
 Please, when using *chile-mesh_v1.0* or any content from this work cite *xxx*
 
-<p align="center">
-<img src="./assets/mesh.png" alt="description" style="width:70%;">
-</p>
-
-### Licenses
-
-All files within this repository are distributed under the GNU GPL-v3 license, with the following exceptions:
-- Mesh files <a property="dct:title" rel="cc:attributionURL" href="https://github.com/hugoboulze/chile-mesh">Chile Mesh 1.0 (.geof, .inp, .gmsh)</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://orcid.org/0000-0001-9935-3145">Hugo Boulze</a> are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
+<u>**Licenses**</u> : All files within this repository are distributed under the GNU GPL-v3 license, with the following exceptions:
+- Mesh files <a property="dct:title" rel="cc:attributionURL" href="https://github.com/hugoboulze/chile-mesh">Chile Mesh 1.0 (.geof, .inp, .gmsh)</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://orcid.org/0000-0001-9935-3145">Hugo Boulze </a> are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
 - If a specific file explicitly states an alternate licensing terms, those terms shall supersede the default GPL-v3 license for that particular file.
 
 
@@ -48,6 +46,10 @@ extends from -6 km to -70 km depth. The node-split technique of the fault-plane 
 [**STEP 6**](06_reassign_remesh/README.md): The elsets (e.g. LITHOSPHERE, ASTHENOSPHERE) are finally created. The mesh is refined.
 
  <img src="./assets/pipeline.png" alt="description" style="width:100%;">
+
+ ## Example
+
+ Examples using *chile-mesh_v1.0* with Zset/Zebulon are provided in `./tests/
 
 ##  Prerequisites
 
