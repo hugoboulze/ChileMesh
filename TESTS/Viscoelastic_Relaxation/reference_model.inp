@@ -1,0 +1,125 @@
+%
+% for more details, see documentation: http://zset-software.com/wordpress/wp-content/uploads/manuals/z_set_user.pdf
+%
+****calcul 
+ ***mesh 
+  **file ./chile-mesh_v1.0.geo
+ ***restart
+  ***resolution
+  **sequence 
+  *time        0.9999 1.   10. % 30.  365. 730.  1095. 1825.  3650. 36500. % time in days
+   *iteration 10
+   *ratio    1.e-2
+   *algorithm p1p2p3
+  **automatic_time  epcum 0.001 eicum 0.001
+   *divergence 2.0 4
+   *security   1.2
+   *first_dtime 0.9999  1.e-4  1.  %  1.  30.  30.  120. 365. 365.  3650.
+   *max_dtime   0.9999  1.e-4  10. %10.  30.  30. 120. 365. 365. 3650.
+ 
+ 
+ ***output
+   **frequency
+    *dtime 30.                 
+   **node
+   **no_reaction
+   **component epcum
+
+
+ ***bc
+  **impose_nodal_dof 
+    %fixed bottom and lateral faces
+    east    U1 0. 
+    east    U2 0. 
+    east    U3 0. 
+    west    U1 0. 
+    west    U2 0. 
+    west    U3 0. 
+    north   U1 0. 
+    north   U2 0. 
+    north   U3 0. 
+    south   U1 0. 
+    south   U2 0. 
+    south   U3 0. 
+    bottom  U1 0.
+    bottom  U2 0.
+    bottom  U3 0.
+    
+
+  **simili_gravity
+   *nset earth_surface
+   *factor 29430.  % rho*g = 3000*9.81 (time disapear from equation, not needed to convert m/s-2 in m/j-2 %3.0 density of the lithosphere
+   *origin (0. 0. 0.)
+
+  ***equation 
+   **earthquake
+    fault_plane_B  U1
+    fault_plane_A U1    
+   *translation ascii_file ./disp_files/uniform_Mw9_R0_100_U1.dat T_EQ
+
+   **earthquake
+    fault_plane_B  U2       
+    fault_plane_A U2    
+   *translation ascii_file ./disp_files/uniform_Mw9_R0_100_U2.dat  T_EQ
+
+   **earthquake
+    fault_plane_B  U3        
+    fault_plane_A U3    
+   *translation ascii_file ./disp_files/uniform_Mw9_R0_100_U3.dat  T_EQ
+
+ ***table
+  **name CONSTANTE
+   *time 0.  1.e+30
+   *value 1. 1.
+  **name T_EQ
+   *time  0. 0.9999 1. 1.e30 % the earthquake last 1 minute
+   *value 0. 0.    1. 1. 
+
+
+ ***parameter
+  **function profondeur_m   % Par convention, je la prends negative
+   *function (sqrt(x*x+y*y+z*z) - 6371000. ); 
+   *tables CONSTANTE
+  **function profondeur_km  % Par convention, je la prends negative
+   *function (sqrt(x*x+y*y+z*z) - 6371000. ) / 1000.; 
+   *tables CONSTANTE
+
+
+  ***material 
+
+   **elset LITHOSPHERE-CONTINENTAL *file ./mat/Lithosphere.mat
+   
+   **elset SLAB *file ./mat/Lithosphere.mat
+   **elset LITHOSPHERE-OCEANIC *file ./mat/Lithosphere.mat
+   **elset LAYER-54-70-OCEANIC *file ./mat/Maxwell_3e19_R0_100.mat
+
+   **elset AP  *file ./mat/Lithosphere.mat
+
+   **elset CH-0-70 *file ./mat/Lithosphere.mat
+   **elset CH-70-200  *file ./mat/Maxwell_3e19_R0_100.mat
+   **elset CH-200-270  *file ./mat/Maxwell_3e19_R0_100.mat
+   **elset CH-270-670  *file ./mat/Maxwell_3e20_R0_100.mat
+   
+   **elset  ASTHENOSPHERE-70-200-OCEANIC *file ./mat/Maxwell_3e19_R0_100.mat
+   **elset  ASTHENOSPHERE-200-270-OCEANIC *file ./mat/Maxwell_3e19_R0_100.mat
+   **elset  ASTHENOSPHERE-70-200-CONTINENTAL *file ./mat/Maxwell_3e19_R0_100.mat
+   **elset  ASTHENOSPHERE-200-270-CONTINENTAL *file ./mat/Maxwell_3e19_R0_100.mat
+
+   **elset DEEP-UPPER-MANTLE  *file ./mat/Maxwell_3e20_R0_100.mat
+   **elset LOWER-MANTLE  *file ./mat/Maxwell_3e21_R0_100.mat
+
+****return
+
+%
+% Relocating of displacements at desired positions : Zrun -pp reference_model.inp
+%
+
+****post_processing
+ ***global_post_processing
+  **file node
+  **process relocalised_post
+   *station_file  ./reloc/grid_-80_-30_-55_0_0.5deg_XYZ.dat
+   *variables U1 U2 U3
+   *output_file reference_model_grid.vtk
+   *tolerance 5.0
+****return
