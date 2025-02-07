@@ -13,14 +13,14 @@
 <u>**Contacts**</u> : [boulze@geologie.ens.fr](mailto:boulze@geologie.ens.fr), [jean-didier.garaud@onera.fr](mailto:jean-didier.garaud@onera.fr)
 
 <u>**How to cite**</u> :
-Please, when using *chile-mesh_v1.0* or any content from this work cite *xxx*
+Please, when using *Chile_Mesh_v1.0* or any content from this work cite *xxx*
 
 <u>**Licenses**</u> : All files within this repository are distributed under the GNU GPL-v3 license, with the following exceptions:
-- Mesh files <a property="dct:title" rel="cc:attributionURL" href="https://github.com/hugoboulze/chile-mesh">Chile Mesh 1.0 (.geof, .inp, .gmsh)</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://orcid.org/0000-0001-9935-3145">Hugo Boulze </a> are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
+- Mesh files <a property="dct:title" rel="cc:attributionURL" href="https://github.com/hugoboulze/chile-mesh">Chile_Mesh_v1.0 (.geof, .inp, .gmsh)</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://orcid.org/0000-0001-9935-3145">Hugo Boulze </a> are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>
 - If a specific file explicitly states an alternate licensing terms, those terms shall supersede the default GPL-v3 license for that particular file.
 
 
-## Geophysical zones included in *chile-mesh_v1.0*
+## Geophysical zones included in *Chile_Mesh_v1.0*
 
 <p align="center">
 <img src="./assets/zone_names.png" alt="description" style="width:70%;">
@@ -49,7 +49,7 @@ extends from -6 km to -70 km depth. The node-split technique of the fault-plane 
 
  ## Example
 
- Examples using *chile-mesh_v1.0* with Zset/Zebulon are provided in `./tests/
+ Examples using *Chile_Mesh_v1.0* with Zset/Zebulon are provided in ./TESTS
 
 ##  Prerequisites
 

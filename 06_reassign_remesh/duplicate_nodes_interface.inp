@@ -22,17 +22,17 @@
 
   **cleanup_bsets
 
- ***mesh ./chile-mesh_v1.0.geo
+ ***mesh ./Chile_Mesh_v1.0.geo
   **open ./mesh_duplicated_tmp.geo
 
   **rename_set
    *bsets
     SIDE1 fault_plane_A_Elargi
     SIDE0 fault_plane_B_Elargi
-  
+
   **nset fault_plane_A_Elargi *use_bset fault_plane_A_Elargi *function 1. ;
   **nset fault_plane_B_Elargi  *use_bset fault_plane_B_Elargi  *function 1. ;
-  
+
   **nset fault_plane_A *use_nset fault_plane_A_Elargi *function 1. ;
   **remove_nodes_from_nset *nset_name fault_plane_A *nsets_to_remove FRONT
   **nset fault_plane_B  *use_nset fault_plane_B_Elargi  *function 1. ;
