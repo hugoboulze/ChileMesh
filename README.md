@@ -49,7 +49,7 @@ extends from -6 km to -70 km depth. The node-split technique of the fault-plane 
 
  ## Example
 
- Examples using *Chile_Mesh_v1.0* with Zset/Zebulon are provided in ./TESTS
+ Examples using *Chile_Mesh_v1.0* with Zset/Zebulon are provided in FEA (Finite Element Analysis) directory.
 
 ##  Prerequisites
 
