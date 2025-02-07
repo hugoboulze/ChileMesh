@@ -38,7 +38,7 @@ In a terminal, type:
 Zrun -pp reference_model.inp
 ```
 
-##### Output:
+##### Output:
 - ```reference_model_grid.vtk```
 - ```reference_model.(msgp, post, utp)```
 
@@ -48,6 +48,6 @@ In a terminal, type:
 ```
 python3 pp.py
 ```
-##### Output:
+##### Output:
 - ```reference_model_grid.dat```
 - ```./tS_grid```: containing all predicted time-series of displacement for each point of the grid
