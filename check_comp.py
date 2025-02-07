@@ -24,7 +24,7 @@ depth = {'00': scale*zmax, '04': scale*z4km, '54': scale*z54km, '70': scale*z70k
          '200': scale*z200km, '270': scale*z270km, '670': scale*z670km, 'BOTTOM': scale*zmin}
 
 
-mesh_path = sys.argv[1] #check end of step6, mesh needs to be flat
+mesh_path = sys.argv[1] #check end of Step 5, mesh needs to be flat
 mesh = zset.Mesh(mesh_path)
 
 node_coords = mesh.nodes_coordinates()

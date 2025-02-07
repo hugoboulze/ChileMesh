@@ -31,7 +31,7 @@ mesh = zset.Mesh(DIR+'/'+mesh)
 mesh.transform("**extract_surface *elset " + geom)
 mesh.transform('**RThetaPhi_to_XYZ')
 
-surf1_ids = mesh.nsets['surface_1'].ranks() #surface_1 and _2 must be checked in case of no-sens result
+surf1_ids = mesh.nsets['surface_1'].ranks() #surface_1 and _2 must be checked in case of no-sense result
 surf2_ids = mesh.nsets['surface_2'].ranks()
 
 node_coords = mesh.nodes_coordinates()
@@ -70,7 +70,7 @@ ax1.add_feature(cfeature.LAND)
 ax1.add_feature(cfeature.OCEAN)
 ax1.add_feature(cfeature.COASTLINE, linewidth=2)
 c = ax1.scatter(thickness[:,0], thickness[:,1], c=thickness[:,2], s=20)
-ax1.set_xticks([-80, -70, -60])# ax1.set_xticks(-90, -30)
+ax1.set_xticks([-80, -70, -60])
 ax1.set_yticks([-60, -50, -40, -30, -20, -10, 0])
 ax1.set_ylabel('Latitude')
 ax1.set_xlabel('Longitude')
