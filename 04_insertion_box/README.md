@@ -1,6 +1,6 @@
 # Module 4: Insertion Box
 
-Insertion of the subduction in the bounding-box.
+Insertion of the subduction in the bounding box.
 
 <p align="center">
  <img src="../assets/step4.gif" alt="description" style="width:50%;">
