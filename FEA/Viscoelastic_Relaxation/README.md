@@ -1,5 +1,8 @@
-# How to compute viscoelastic relaxation following an earthquake ?
-### using with Zset/Zebulon and Chile_Mesh_v1.0 ?
+# How to compute viscoelastic relaxation following an earthquake?
+
+using:
+- Zset/Zebulon
+- Chile_Mesh_v1.0
 
 ## 1. Finite-element computation
 In a terminal, type:
