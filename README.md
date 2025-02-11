@@ -26,16 +26,16 @@ Please, when using *Chile_Mesh_v1.0* or any content from this work cite *xxx*
 <img src="./assets/zone_names.png" alt="description" style="width:70%;">
 </p>
 
-2D-sketch representing the geophysical zones included in chile-mesh_v1.0. CH: channel. AP: Accretionary prism. The fault-plane
-extends from -6 km to -70 km depth. The node-split technique of the fault-plane (Melosh et Raefsky, 1981) gives two groups of nodes: fault plane A and fault plane B, respectively oriented towards the Earth center and towards the surface. Depth of zones is indicated as an italic number.
+2D sketch representing the geophysical zones included in chile-mesh_v1.0. CH: channel. AP: Accretionary prism. The fault-plane
+extends from -6 km to -70 km depth. The node-split technique of the fault plane (Melosh et Raefsky, 1981) gives two groups of nodes: fault plane A and fault plane B, respectively oriented towards the Earth's center and the surface. The depth of zones is indicated as an italic number.
 
 
 ## Mesh construction
 
 
-[**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon, lat, depth) of surface of the slab based on Slab2.0.
+[**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon, lat, depth) of the surface of the slab based on Slab2.0.
 
-[**STEP 2**](02_slab_2D_to_3D/README.md): Creation of the subduction interface. First the 2D slice of the interface is drawn. Then, it is extended to 3D along the path of the subduction trench.
+[**STEP 2**](02_slab_2D_to_3D/README.md): Creation of the subduction interface. First, the 2D slice of the interface is drawn. Then, it is extended to 3D along the path of the subduction trench.
 
 [**STEP 3**](03_deform_slab/README.md): The slab is deformed according to the surface of Slab2.0.
 
@@ -47,11 +47,11 @@ extends from -6 km to -70 km depth. The node-split technique of the fault-plane 
 
  <img src="./assets/pipeline.png" alt="description" style="width:100%;">
 
- ## Example
+ ## Finite Element Analysis
 
- Examples using *Chile_Mesh_v1.0* with Zset/Zebulon are provided in FEA (Finite Element Analysis) directory.
+ The FEA directory provides examples using *Chile_Mesh_v1.0* with Zset/Zebulon.
 
-##  Prerequisites
+ ##  Prerequisites
 
 The script `check_prerequisites.sh` verifies some software prerequisites.
 
