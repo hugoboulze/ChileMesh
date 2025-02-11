@@ -1,6 +1,6 @@
 # Module 1: Surface Slab
 
-Creation of point on the surface of the slab based on Slab2.0 (Hayes et al. 2018).
+Creation of point on the surface of the slab based on Slab 2.0 (Hayes et al. 2018).
 The surface will be used to project the slab in the **Module 3**.
 
 Run the following script in the current directory:
