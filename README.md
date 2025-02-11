@@ -33,7 +33,7 @@ extends from -6 km to -70 km depth. The node-split technique of the fault plane 
 ## Mesh construction
 
 
-[**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon, lat, depth) of the surface of the slab based on Slab2.0.
+[**STEP 1**](01_surface_slab/README.md): Creation of a .csv file containing the coordinates (lon, lat, depth) of the surface of the slab based on Slab2.0 ([Hayes et al. 2018](https://www.science.org/doi/10.1126/science.aat4723))
 
 [**STEP 2**](02_slab_2D_to_3D/README.md): Creation of the subduction interface. First, the 2D slice of the interface is drawn. Then, it is extended to 3D along the path of the subduction trench.
 
