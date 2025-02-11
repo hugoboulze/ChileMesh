@@ -29,5 +29,5 @@ Run the following script in the current directory:
 - [`zcrack3.dat`](zcrack3.dat): Crack insertion parameters, for the cut at 70 km.
 - [`zcrack4.dat`](zcrack4.dat): Crack insertion parameters, for the cut at 54 km.
 - [`zcrack5.dat`](zcrack5.dat): Crack insertion parameters, for the cut at 4 km.
-- [`zcrack6.dat`](zcrack6.dat): Crack insertion parameters, for the vertical cuts between the slab's North and South extremities and corners of the bounding-box.
+- [`zcrack6.dat`](zcrack6.dat): Crack insertion parameters, for the vertical cuts between the slab's North and South extremities and corners of the bounding box.
 - [`zcrack.tmpl.z7p`](zcrack.tmpl.z7p): Template batch file to run Z-cracks.
