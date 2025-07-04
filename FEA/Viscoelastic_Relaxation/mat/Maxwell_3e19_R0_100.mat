@@ -3,7 +3,7 @@
  **elasticity isotropic 
    G       profondeur_m
 #  [Pa]    [m]
-2.94e+011   -3.00e+6    # extrapolation, pour eviter les soucis d'arrondis
+2.94e+011   -3.00e+6   
 2.94e+011   -2.89e+6                                                      
 1.93e+011   -1.25e+6                                                      
 1.55e+011   -6.71e+5                                                      
@@ -18,7 +18,7 @@
 
    K           profondeur_m
 #  [Pa]        [m]
-6.56e+011  -3.00e+6    # extrapolation, pour eviter les soucis d'arrondis
+6.56e+011  -3.00e+6   
 6.56e+011  -2.89e+6                                                      
 3.73e+011  -1.25e+6                                                      
 3.00e+011  -6.71e+5                                                      
@@ -33,7 +33,7 @@
 
  **potential gen_evp ep   
   *flow norton            # \dot\lambda = <f/K>^n
-   n 1.                   # sans dimension
+   n 1.                   # without dimension
 #   K  3.472e+14             # [Pa.jour]   ... \eta = 1/3 K   (\eta=1.e+19 Pa.s)
 #   K  function 3.472e+14 ;  # [Pa.jour]
    K  function (3 * 3.e+19)/86400 ;

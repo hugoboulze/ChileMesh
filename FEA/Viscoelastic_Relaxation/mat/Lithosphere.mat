@@ -1,11 +1,11 @@
-% Zone continentale de la Lithosphere
-% Copie de PREM, avec modif entre 0 et 30 et 60 km de profondeur. 
+% Lithosphere mat file
+% Copy of PREM, with modifications between 0, 30 and 60 km depth. 
 
-***behavior linear_elastic   # Lithosphere elastique 
+***behavior linear_elastic 
  **elasticity
    G       profondeur_m
 #  [Pa]    [m]
-2.94e+011   -3.00e+6    # extrapolation, pour eviter les soucis d'arrondis
+2.94e+011   -3.00e+6  
 2.94e+011   -2.89e+6                                                      
 1.93e+011   -1.25e+6                                                      
 1.55e+011   -6.71e+5                                                      
@@ -20,7 +20,7 @@
 
    K           profondeur_m
 #  [Pa]        [m]
-6.56e+011  -3.00e+6    # extrapolation, pour eviter les soucis d'arrondis
+6.56e+011  -3.00e+6 
 6.56e+011  -2.89e+6                                                      
 3.73e+011  -1.25e+6                                                      
 3.00e+011  -6.71e+5                                                      
