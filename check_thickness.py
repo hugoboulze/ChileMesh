@@ -11,7 +11,6 @@ Created on Mon Oct  4 10:13:28 2021
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-mpl.rcParams['font.family'] = 'Open Sans'
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 import zset
@@ -31,7 +30,7 @@ mesh = zset.Mesh(DIR+'/'+mesh)
 mesh.transform("**extract_surface *elset " + geom)
 mesh.transform('**RThetaPhi_to_XYZ')
 
-surf1_ids = mesh.nsets['surface_1'].ranks() #surface_1 and _2 must be checked in case of no-sense result
+surf1_ids = mesh.nsets['surface_1'].ranks() #surface_1 and surface_2 must be checked in case of no-sense result
 surf2_ids = mesh.nsets['surface_2'].ranks()
 
 node_coords = mesh.nodes_coordinates()
@@ -76,7 +75,7 @@ ax1.set_ylabel('Latitude')
 ax1.set_xlabel('Longitude')
 fig.colorbar(c, label='Thickness [km]')
 
-#histogramme
+#histogram
 ax2 = fig.add_subplot(1, 2, 2)
 ax2.hist(thickness[:,2], bins=100)
 ax2.set_xlabel('Thickness [km]')
